@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title><![CDATA[Falcon Blog]]></title><description><![CDATA[Personal Blog | Sharing Experience]]></description><link>http://localhost:2368/</link><image><url>http://localhost:2368/favicon.png</url><title>Falcon Blog</title><link>http://localhost:2368/</link></image><generator>Ghost 3.40</generator><lastBuildDate>Mon, 22 Feb 2021 18:39:35 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Handful of LEDs]]></title><link>http://localhost:2368/hand-full-of-leds/</link><guid isPermaLink="false">5fd9174a1363b2018c5c951f</guid><category><![CDATA[Arduino]]></category><dc:creator><![CDATA[Chamath Shamal]]></dc:creator><pubDate>Tue, 15 Dec 2020 20:54:28 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1573876568501-f41ab1a667af?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MXwxMTc3M3wwfDF8c2VhcmNofDYwfHxsZWR8ZW58MHx8fA&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000" medium="image"/><content:encoded/></item><item><title><![CDATA[STM32]]></title><description><![CDATA[<!--kg-card-begin: markdown--><p>I was looking for a faster microcontroller and with help of many I choose STM32 as the solution.So now you know <strong>STM32</strong> is faster than <strong>AVR based Arduino MCUs</strong>.</p>
+<p>As I told you I choosed <strong>STM32f103</strong> MCU base develpment board called <strong>STM bluepill</strong>. They are widely available in any</p>]]></description><link>http://localhost:2368/stm32/</link><guid isPermaLink="false">5fd916fb1363b2018c5c9517</guid><category><![CDATA[Arduino]]></category><category><![CDATA[stm32]]></category><dc:creator><![CDATA[Chamath Shamal]]></dc:creator><pubDate>Tue, 15 Dec 2020 20:54:24 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1553341640-6b28ff92098a?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MXwxMTc3M3wwfDF8c2VhcmNofDJ8fDMyJTIwYml0fGVufDB8fHw&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000" medium="image"/><content:encoded><![CDATA[<!--kg-card-begin: markdown--><img src="https://images.unsplash.com/photo-1553341640-6b28ff92098a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMTc3M3wwfDF8c2VhcmNofDJ8fDMyJTIwYml0fGVufDB8fHw&ixlib=rb-1.2.1&q=80&w=2000" alt="STM32"><p>I was looking for a faster microcontroller and with help of many I choose STM32 as the solution.So now you know <strong>STM32</strong> is faster than <strong>AVR based Arduino MCUs</strong>.</p>
+<p>As I told you I choosed <strong>STM32f103</strong> MCU base develpment board called <strong>STM bluepill</strong>. They are widely available in any region with  very low price. It may be cloned, but works same in many cases.In this article I will explaine how to configure perfect environment for work with <strong>STM32 bluepill</strong>. There are many environments to configure such as CubeIDE, VSCODE + PlatformIO extention, Atom + PlatformIO extention. But here we are using the Arduino IDE.</p>
+<p>This MCU are <strong>32bit based</strong> and have <strong>large RAM/ROM</strong> compared to AVR based Arduino. I will discuss about MCUs in another article soon.</p>
+<p><img src="http://localhost:2368/content/images/2020/12/stmf103-1.jpg" alt="STM32"></p>
+<p><strong>So let's make it work.</strong></p>
+<p>You may required these.</p>
+<ul>
+<li>
+<pre><code>STM32 Development Board 
+</code></pre>
+</li>
+<li>
+<pre><code>FTDI Programmer or STLink
+</code></pre>
+</li>
+<li>
+<pre><code>a Breadboard*
+</code></pre>
+</li>
+<li>
+<pre><code>Some Jumper wires
+</code></pre>
+</li>
+<li>
+<pre><code>a Laptop 
+</code></pre>
+</li>
+</ul>
+<h3 id="withftdiprogrammer">With FTDI programmer</h3>
+<p>connect FTDI to STM using jumpers.</p>
+<table>
+<thead>
+<tr>
+<th>FTDI</th>
+<th>STM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VCC</td>
+<td>5V</td>
+</tr>
+<tr>
+<td>GND</td>
+<td>GND</td>
+</tr>
+<tr>
+<td>RX</td>
+<td>A9</td>
+</tr>
+<tr>
+<td>TX</td>
+<td>A10</td>
+</tr>
+</tbody>
+</table>
+<p><img src="http://localhost:2368/content/images/2020/12/Circuit-Diagram-for-Blinking-LED-using-STM32-2.jpg" alt="STM32"></p>
+<ol>
+<li>
+<p>Go to Arduino IDE. <em>Files &gt; Preferences</em>.</p>
+</li>
+<li>
+<p>Paste this URL in the Additional Board Manager URLs tab &gt; OK<br>
+<code>http://dan.drown.org/stm32duino/package_STM32duino_index.json</code></p>
+<p><img src="http://localhost:2368/content/images/2020/12/prefe2.jpg" alt="STM32"></p>
+<p><em>(if there are some links already use the button to exoand the window then paste the link.)</em></p>
+</li>
+<li>
+<p>Go to <em>Tools &gt; Boards &gt; Board Manager</em>.</p>
+</li>
+</ol>
+<p><img src="http://localhost:2368/content/images/2020/12/tools1-1.jpg" alt="STM32"></p>
+<ol start="4">
+<li>Search for <code>stm</code>. Click install.</li>
+</ol>
+<p><img src="http://localhost:2368/content/images/2020/12/bman2.jpg" alt="STM32"></p>
+<ol start="5">
+<li>Set settings as following for FTDI.</li>
+</ol>
+<p><img src="http://localhost:2368/content/images/2020/12/tool3.jpg" alt="STM32"></p>
+<ol start="6">
+<li>Select the COM port.</li>
+</ol>
+<ul>
+<li>read the last steps before upload</li>
+</ul>
+<h3 id="withstlink">With STLink</h3>
+<p>only few steps have to change from above. Im currently using a Windows Laptop.so some of these steps may chang for Mac OS Laptops.</p>
+<ul>
+<li>Download necessary <a href="https://www.st.com/en/development-tools/stsw-link009.html">drivers</a> for STLink first. Install it. When you plug the STLINK to your computer after that it may look like this. ( for older STLinks use  STSW-LINK007 )</li>
+</ul>
+<!--kg-card-end: markdown--><figure class="kg-card kg-gallery-card kg-width-wide"><div class="kg-gallery-container"><div class="kg-gallery-row"><div class="kg-gallery-image"><img src="http://localhost:2368/content/images/2020/12/taskbr.jpg.jpg" width="339" height="37" alt="STM32"></div><div class="kg-gallery-image"><img src="http://localhost:2368/content/images/2020/12/taskbr.jpg.jpg.jpg" width="309" height="86" alt="STM32"></div></div></div></figure><!--kg-card-begin: markdown--><ol>
+<li>
+<p>Go to Arduino IDE. <em>Files &gt; Preferences</em>.</p>
+</li>
+<li>
+<p>Paste this URL in the Additional Board Manager URLs tab &gt; OK<br>
+<code>http://dan.drown.org/stm32duino/package_STM32duino_index.json</code></p>
+<p><img src="http://localhost:2368/content/images/2020/12/prefe2.jpg" alt="STM32"></p>
+<p><em>(if there are some links already use the button to exoand the window then paste the link.)</em></p>
+</li>
+<li>
+<p>Go to <em>Tools &gt; Boards &gt; Board Manager</em>.</p>
+</li>
+</ol>
+<p><img src="http://localhost:2368/content/images/2020/12/tools1-1.jpg" alt="STM32"></p>
+<ol start="4">
+<li>Search for <code>stm</code>. Click install.</li>
+</ol>
+<p><img src="http://localhost:2368/content/images/2020/12/bman2.jpg" alt="STM32"></p>
+<ol start="5">
+<li>Set settings as following for STLink.</li>
+</ol>
+<p><img src="http://localhost:2368/content/images/2020/12/tool4.jpg" alt="STM32"></p>
+<ol start="6">
+<li>Select the COM port.</li>
+</ol>
+<h3 id="laststeps">last steps.</h3>
+<p>Have you notices that, there are 2 male headers marked as BOOT0, BOOT1. Read this part carefully. Using these 2 BOOT pins we can configure BOOT memories.</p>
+<table>
+<thead>
+<tr>
+<th>BOOT1</th>
+<th>BOOT0</th>
+<th>BOOT MODE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x</td>
+<td>0</td>
+<td>Main Flash memory</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>System memory</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>Embedded SRAM</td>
+</tr>
+</tbody>
+</table>
+<p>To upload code to flash memory ,</p>
+<ul>
+<li>Set <strong>BOOT0 --&gt; 1 | BOOT1 --&gt; 0</strong>.</li>
+</ul>
+<p>After upload the code,</p>
+<ul>
+<li>set <strong>BOOT0 --&gt; 0</strong> .<br>
+By this we only reprogram flash memory.</li>
+</ul>
+<h3 id="whydontweuploadcodesviausbcodedirectly">Why don't we upload codes via USB code directly ?</h3>
+<p>simple answer. Upload through USB require a Bootloader, which not include when we purchase this MCU. Wecan flash the Bootloader by one of above methods. Then we can use USB port for upload the code. I will upload descriptive article for that task.</p>
+<blockquote>
+<p>stay tuned</p>
+</blockquote>
+<!--kg-card-end: markdown-->]]></content:encoded></item><item><title><![CDATA[NodeMCU]]></title><description><![CDATA[<!--kg-card-begin: markdown--><blockquote>
+<p>“If you think that the internet has changed your life, think again. The IoT is about to change it all over again!” — Brendan O’Brien, Chief Architect &amp; Co-Founder, Aria Systems</p>
+</blockquote>
+<p><strong>NodeMCU</strong> is a <strong>low-cost</strong> open-source IoT system. but in general, NodeMCU stands for hardware based on <strong>ESP8266 Wi-Fi SoC</strong></p>]]></description><link>http://localhost:2368/nodemcu/</link><guid isPermaLink="false">5fd916d91363b2018c5c9512</guid><category><![CDATA[Arduino]]></category><category><![CDATA[esp8266]]></category><category><![CDATA[nodemcu]]></category><category><![CDATA[IoT]]></category><dc:creator><![CDATA[Chamath Shamal]]></dc:creator><pubDate>Tue, 15 Dec 2020 20:54:21 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1524234107056-1c1f48f64ab8?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MXwxMTc3M3wwfDF8c2VhcmNofDF8fEVTUDgyNjZ8ZW58MHx8fA&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000" medium="image"/><content:encoded><![CDATA[<!--kg-card-begin: markdown--><blockquote>
+<img src="https://images.unsplash.com/photo-1524234107056-1c1f48f64ab8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMTc3M3wwfDF8c2VhcmNofDF8fEVTUDgyNjZ8ZW58MHx8fA&ixlib=rb-1.2.1&q=80&w=2000" alt="NodeMCU"><p>“If you think that the internet has changed your life, think again. The IoT is about to change it all over again!” — Brendan O’Brien, Chief Architect &amp; Co-Founder, Aria Systems</p>
+</blockquote>
+<p><strong>NodeMCU</strong> is a <strong>low-cost</strong> open-source IoT system. but in general, NodeMCU stands for hardware based on <strong>ESP8266 Wi-Fi SoC</strong>. Basically, this is a development board like Arduino. There are some significant differences between common AVR based Arduino board and NodeMCU.I will discuss those in another article. Not like Arduino, we can use many languages for NodeMCU like <strong>Lua scripting language, Micro-python</strong>. But to make things easy I will discuss with well-known <strong>Arduino language</strong>.</p>
+<p>Let get started with NodeMCU.I think You may configure <strong>Arduino IDE</strong> now. If not follow <a href="https://falconblog.xyz/arduino_s1/index.html">this</a>.</p>
+<ol>
+<li>
+<p>Go to Arduino IDE. <em>Files &gt; Preferences</em>.<br>
+<img src="http://localhost:2368/content/images/2020/12/file1.jpg" alt="NodeMCU"></p>
+</li>
+<li>
+<p>Paste this URL in the Additional Board Manager URLs tab &gt; OK<br>
+<code>http://arduino.esp8266.com/stable/package_esp8266com_index.json</code></p>
+<p><img src="http://localhost:2368/content/images/2020/12/preferences.jpg" alt="NodeMCU"></p>
+</li>
+<li>
+<p>Go to <em>Tools &gt; Boards &gt; Board Manager</em>.<br>
+<img src="http://localhost:2368/content/images/2020/12/tools1.jpg" alt="NodeMCU"></p>
+</li>
+<li>
+<p>Search for <code>esp8266</code>. Click install.<br>
+<img src="http://localhost:2368/content/images/2020/12/bman1.jpg" alt="NodeMCU"></p>
+</li>
+</ol>
+<p>Now you have <strong>All set and Ready to Go!!!</strong>. Try something from Examples.</p>
+<ol start="5">
+<li>select your board ( Mine is NodeMCU 1.0)<br>
+You may see new options here. If you are not familiar with those keep default settings.</li>
+</ol>
+<p><img src="http://localhost:2368/content/images/2020/12/tools2.jpg" alt="NodeMCU"></p>
+<ol start="6">
+<li>Select your COM port and <strong>Upload!!!</strong></li>
+</ol>
+<ul>
+<li>NodeMCU is very useful when it comes to IoT because of having built-in Wi-Fi.</li>
+</ul>
+<blockquote>
+<p>Stay Tuned for the new IoT tutorial series.</p>
+</blockquote>
+<!--kg-card-end: markdown-->]]></content:encoded></item><item><title><![CDATA[vscode for Arduino]]></title><description><![CDATA[<!--kg-card-begin: markdown--><p><strong>vscode</strong> is a light weight <strong>code editor</strong>. It also have many capabilities. Apart from that I like its unique design with many colors. So I used to work with vscode like more than 3 months now. It has a rich ecosystem of extensions for other languages such as C++, C#</p>]]></description><link>http://localhost:2368/vscode-for-arduino/</link><guid isPermaLink="false">5fd917171363b2018c5c951b</guid><category><![CDATA[Arduino]]></category><category><![CDATA[platformio]]></category><category><![CDATA[vscode]]></category><dc:creator><![CDATA[Chamath Shamal]]></dc:creator><pubDate>Tue, 15 Dec 2020 20:54:16 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1590130382404-36dcbb666a3d?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MXwxMTc3M3wwfDF8c2VhcmNofDl8fHZzY29kZXxlbnwwfHx8&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000" medium="image"/><content:encoded><![CDATA[<!--kg-card-begin: markdown--><img src="https://images.unsplash.com/photo-1590130382404-36dcbb666a3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMTc3M3wwfDF8c2VhcmNofDl8fHZzY29kZXxlbnwwfHx8&ixlib=rb-1.2.1&q=80&w=2000" alt="vscode for Arduino"><p><strong>vscode</strong> is a light weight <strong>code editor</strong>. It also have many capabilities. Apart from that I like its unique design with many colors. So I used to work with vscode like more than 3 months now. It has a rich ecosystem of extensions for other languages such as C++, C#, Java, Python and runtimes (such as .NET and Unity). I am basically use vscode for C, C++ and Python. Also I have set vscode as a <a href="https://www.latex-project.org/">LaTEX</a> editor. I wanted to integrate Arduino things with vscode so that I can use one editor for almost everything I do.</p>
+<blockquote>
+<p>Let me tell you how I did it.</p>
+</blockquote>
+<p>vscode have an extension for <strong>PlatformIO</strong>. So what is PlatformIO?</p>
+<p>PlatformIO is a cross-platform, cross-architecture, multiple framework, Professional tool for embedded systems engineers and for software developers who write applications for embedded products.</p>
+<p>Let's make it work.</p>
+<ol>
+<li>First you need <strong>vscode installed</strong> in your PC. If not try <a href="https://code.visualstudio.com/Download">this</a>.</li>
+<li>Go to vscode.click on <strong>extention icon</strong>.<br>
+<img src="http://localhost:2368/content/images/2020/12/vscode.jpg" alt="vscode for Arduino"></li>
+<li>Search <code>PlatformIO IDE</code> there.</li>
+<li>Click <strong>install</strong>. It may take a while. <strong>Reopen</strong> vscode.<br>
+<img src="http://localhost:2368/content/images/2020/12/vsc2.jpg" alt="vscode for Arduino"></li>
+<li>click on that little <strong>home icon</strong>.<br>
+<em>Now you have successfully installed PlatformIO.</em><br>
+<img src="http://localhost:2368/content/images/2020/12/plio.jpg" alt="vscode for Arduino"></li>
+</ol>
+<p>Now like always <strong>try Blink</strong> on PlatformIO.</p>
+<ol>
+<li>Go to New Project.</li>
+</ol>
+<ul>
+<li>
+<pre><code>Give a proper project name.
+</code></pre>
+</li>
+<li>
+<pre><code>Select the board you would like to upload this code.
+</code></pre>
+</li>
+<li>
+<pre><code>Framework: Arduino
+</code></pre>
+<em>Note! if you want to save this somewhere else apartfrom default location untick the check box and set location where you want to save it.</em><br>
+<img src="http://localhost:2368/content/images/2020/12/plio3.jpg" alt="vscode for Arduino"></li>
+</ul>
+<p>This process might take time.<br>
+<img src="http://localhost:2368/content/images/2020/12/plio2.jpg" alt="vscode for Arduino"></p>
+<p>Goto <em>src &gt; main.cpp</em> . Here you have to code your main program. In this case similar to Arduino sketch. For Blink program code will be.......</p>
+<pre><code>#include &lt;Arduino.h&gt;
+void setup(){
+    pinMode(LED_BUILTIN,OUTPUT);
+}
+void loop( {
+digitalWrite(LED_BUILTIN,HIGH);
+delay(1000);
+digitalWrite(LED_BUILTIN,LOW
+delay(1000);
+}
+</code></pre>
+<p>To <strong>compile</strong> go to bottom left corner.<br>
+<img src="http://localhost:2368/content/images/2020/12/plio5.jpg" alt="vscode for Arduino"></p>
+<p>( <em>After home icon left to right complie, upload, clean, Serial Monitor, Terminal</em> )</p>
+<h3 id="advantagesofplatformio">Advantages of PlatformIO</h3>
+<ul>
+<li>
+<pre><code>C/C++ Intelligent Code Completion
+</code></pre>
+</li>
+<li>
+<pre><code>Smart Code Linter for the super-fast coding
+</code></pre>
+</li>
+<li>
+<pre><code>Multi-projects workflow with Multiple Panes.
+</code></pre>
+</li>
+<li>
+<pre><code>Themes Support with dark and light colors
+</code></pre>
+</li>
+<li>
+<pre><code>Built-in Terminal with PlatformIO CLI tool
+</code></pre>
+</li>
+<li>
+<pre><code>Library manager 
+</code></pre>
+</li>
+<li>
+<pre><code>Continuous integration
+</code></pre>
+</li>
+<li>
+<pre><code>Support for 900+ Boards
+</code></pre>
+</li>
+</ul>
+<p>From many features of PlatformIO, what I like the most is Organizing the necessary files super cool way. When I want to share my work with others all I want to do is upload the folder itself to place like Github.<br>
+If I used arduino ide for that case I have to include all the libraries, Sketch and other.I have to manually organize things then. vscode + PlatformIO make things easy to work.</p>
+<blockquote>
+<p>stay tuned for next article...</p>
+</blockquote>
+<!--kg-card-end: markdown--><p></p><p></p><p></p><p></p>]]></content:encoded></item><item><title><![CDATA[Structures-II]]></title><description><![CDATA[<!--kg-card-begin: markdown--><p>In <a href="https://falconblog.xyz/structures/">Structure-I</a> includes about <strong>control structures</strong> and <strong>basic operations</strong> in Arduino Language.</p>
+<ul>
+<li>control structures<br>
+1.selection<br>
+2.repetition</li>
+<li>subroutines</li>
+<li>blocks</li>
+</ul>
+<h3 id="subroutings">subroutings</h3>
+<h3 id="blocks">blocks</h3>
+<!--kg-card-end: markdown--><p></p>]]></description><link>http://localhost:2368/structures-ii/</link><guid isPermaLink="false">5fd8cee711120f006f320fa1</guid><dc:creator><![CDATA[Chamath Shamal]]></dc:creator><pubDate>Tue, 15 Dec 2020 15:04:30 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1607971422532-73f9d45d7a47?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MXwxMTc3M3wwfDF8YWxsfDU3fHx8fHx8Mnw&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=2000" medium="image"/><content:encoded><![CDATA[<!--kg-card-begin: markdown--><img src="https://images.unsplash.com/photo-1607971422532-73f9d45d7a47?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMTc3M3wwfDF8YWxsfDU3fHx8fHx8Mnw&ixlib=rb-1.2.1&q=80&w=2000" alt="Structures-II"><p>In <a href="https://falconblog.xyz/structures/">Structure-I</a> includes about <strong>control structures</strong> and <strong>basic operations</strong> in Arduino Language.</p>
+<ul>
+<li>control structures<br>
+1.selection<br>
+2.repetition</li>
+<li>subroutines</li>
+<li>blocks</li>
+</ul>
+<h3 id="subroutings">subroutings</h3>
+<h3 id="blocks">blocks</h3>
+<!--kg-card-end: markdown--><p></p>]]></content:encoded></item><item><title><![CDATA[Structures-I]]></title><description><![CDATA[<!--kg-card-begin: markdown--><p>Every programming language has its own structure. Structure of the program will improve the clarity and quality. It also improves development time as well.<br>
+There are some main structures common in every language (way of using them could be different in some cases.)</p>
+<ul>
+<li>control structures<br>
+1.selection<br>
+2.repetition</li>
+<li>subroutines</li></ul>]]></description><link>http://localhost:2368/structures/</link><guid isPermaLink="false">5fd7c9d9e73c930ae908ba4a</guid><category><![CDATA[Arduino]]></category><category><![CDATA[structures]]></category><dc:creator><![CDATA[Chamath Shamal]]></dc:creator><pubDate>Sun, 28 Jun 2020 11:09:09 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1532622785990-d2c36a76f5a6?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=2000&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ" medium="image"/><content:encoded><![CDATA[<!--kg-card-begin: markdown--><img src="https://images.unsplash.com/photo-1532622785990-d2c36a76f5a6?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=2000&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ" alt="Structures-I"><p>Every programming language has its own structure. Structure of the program will improve the clarity and quality. It also improves development time as well.<br>
+There are some main structures common in every language (way of using them could be different in some cases.)</p>
+<ul>
+<li>control structures<br>
+1.selection<br>
+2.repetition</li>
+<li>subroutines</li>
+<li>blocks</li>
+</ul>
+<p>Some basic operations are here that are very useful in programming.</p>
+<h3 id="arithmetics">Arithmetics</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Addition</td>
+<td>+</td>
+<td>Add two operands</td>
+</tr>
+<tr>
+<td>Subtract</td>
+<td>-</td>
+<td>Subtract second from the first one</td>
+</tr>
+<tr>
+<td>Multiplication</td>
+<td>*</td>
+<td>Multiply operand</td>
+</tr>
+<tr>
+<td>Division</td>
+<td>/</td>
+<td>Divide numerator by denominator</td>
+</tr>
+<tr>
+<td>Modulo</td>
+<td>%</td>
+<td>Remainder after integer division</td>
+</tr>
+<tr>
+<td>Assign</td>
+<td>=</td>
+<td>Store the value of RHS to the LHS variable</td>
+</tr>
+</tbody>
+</table>
+<h3 id="comparison">Comparison</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>equal to</td>
+<td>==</td>
+<td>check if two values are equal or not, If equal return true</td>
+</tr>
+<tr>
+<td>not equal to</td>
+<td>!=</td>
+<td>check if two values are equal or not, If not equal return true</td>
+</tr>
+<tr>
+<td>less than</td>
+<td>&lt;</td>
+<td>check if LHS is less than the RHS, if yes return true</td>
+</tr>
+<tr>
+<td>greater than</td>
+<td>&gt;</td>
+<td>check if LHS is greter than the RHS, if yes return true</td>
+</tr>
+<tr>
+<td>less than or equal</td>
+<td>&lt;=</td>
+<td>check if LHS is less than or equal the RHS, if yes return true</td>
+</tr>
+<tr>
+<td>greater than or equal</td>
+<td>&gt;=</td>
+<td>check if LHS is greater than or equal the RHS, if yes return true</td>
+</tr>
+</tbody>
+</table>
+<h3 id="booleanoperations">Boolean Operations</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>and</td>
+<td>&amp;&amp;</td>
+<td>check if both operands are not zero, return true</td>
+</tr>
+<tr>
+<td>or</td>
+<td>||</td>
+<td>check if any operand is not zero, return true</td>
+</tr>
+<tr>
+<td>not</td>
+<td>!</td>
+<td>return the negation of an operand</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bitwiseoperations">Bitwise Operations</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bitwise and</td>
+<td>&amp;</td>
+<td>AND operation on bitwise arithmetics</td>
+</tr>
+<tr>
+<td>bit shift left</td>
+<td>&lt;&lt;</td>
+<td>the bits in the left operand will be shifted left by number of steps in the right operand.</td>
+</tr>
+<tr>
+<td>bit shift right</td>
+<td>&gt;&gt;</td>
+<td>the bits in the left operand will beshifted right by number of steps in the right operand.</td>
+</tr>
+<tr>
+<td>bitwise xor</td>
+<td>^</td>
+<td>XOR operation on bitwise arithmetics</td>
+</tr>
+<tr>
+<td>bitwise or</td>
+<td>|</td>
+<td>OR operation on bitwise arithmetics</td>
+</tr>
+<tr>
+<td>bitwise not</td>
+<td>~</td>
+<td>NOT operation on bitwise arithmetics</td>
+</tr>
+</tbody>
+</table>
+<!--kg-card-end: markdown--><!--kg-card-begin: markdown--><h2 id="controlstructures">Control Structures</h2>
+<p>Control structures are the blocks that determine the direction of the program flows.</p>
+<h3 id="selection">Selection</h3>
+<ol>
+<li>if .. else</li>
+</ol>
+<pre><code>    if (condition){
+       task 1 }
+   else {
+       task 2 }
+</code></pre>
+<p>In this method you can determine what task should be done depending on that &quot;condition&quot; is True or False. If the condition is True program  will run task 1, else it will run task 2. Also, we can check many conditions by using &quot;else if&quot;.</p>
+<pre><code>```
+ if (condition 1){
+     task 1 }
+ else if (condition 2) {
+     task 2 }
+ else if (condition 3) {
+     task 3 } 
+ .
+ .
+ .
+ else{
+     task n} 
+ ```
+</code></pre>
+<ol start="2">
+<li>
+<p>while</p>
+<pre><code>while(condition){
+ task   }  
+</code></pre>
+<p>In this method task will run as long as the condition is true, otherwise, the task will not run.</p>
+</li>
+<li>
+<p>do .. while</p>
+<pre><code>do{
+task } while ( condition );
+</code></pre>
+<p>this is also similar to &quot;while&quot;, but in this method, the task will run already once before program check the condition is True or False.</p>
+</li>
+</ol>
+<h3 id="repetition">Repetition</h3>
+<ol>
+<li>for loop</li>
+</ol>
+<pre><code>for (start,end condition ,step){
+        task  }
+</code></pre>
+<p>Using for loops we can repeat the same task, again and again, a finite number of times without repeating the code.</p>
+<ol start="2">
+<li>while loop</li>
+</ol>
+<pre><code>while(True){
+        task }
+</code></pre>
+<p>using while we discussed above we can repeat a task infinitely by make the statement &quot;True&quot;. We can use &quot;while&quot; for finite loops like this.</p>
+<pre><code>    int step=start ;
+    while(step&lt;end condition){
+        task
+        step+=step; }
+</code></pre>
+<p>note: in above methods we can choose start value, end value and also how many steps should be the next iteration.<br>
+eg:-</p>
+<pre><code>    for(int i=0, i&lt;=10; i+=1){
+        Serial.print(i);
+        Serial.print(',');} 
+</code></pre>
+<p>result&gt;&gt; <code>0,1,2,3,4,5,6,7,8,9,10</code></p>
+<pre><code>    for(int i=0, i&lt;=10; i+=2){
+        Serial.print(i);
+        Serial.print(',');} 
+</code></pre>
+<p>result&gt;&gt; <code>0,2,4,6,8,10</code></p>
+<p>I will discuss about subroutines and blocks in another article so will easy to read.</p>
+<blockquote>
+<p>Stay tuned</p>
+</blockquote>
+<!--kg-card-end: markdown--><!--kg-card-begin: markdown--><blockquote>
+<p>“Structure significantly influences behavior, thereby dramatically impacting results.” ~ Chris Hutchinson</p>
+</blockquote>
+<!--kg-card-end: markdown-->]]></content:encoded></item><item><title><![CDATA[Dark IDE]]></title><description><![CDATA[Bored with regular IDE. Try this]]></description><link>http://localhost:2368/dark-ide/</link><guid isPermaLink="false">5fd7c9d9e73c930ae908ba49</guid><category><![CDATA[Arduino]]></category><category><![CDATA[Dark]]></category><category><![CDATA[Theme]]></category><dc:creator><![CDATA[Chamath Shamal]]></dc:creator><pubDate>Sun, 28 Jun 2020 06:41:24 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1541913299-273fd84d10c4?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=2000&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ" medium="image"/><content:encoded><![CDATA[<!--kg-card-begin: markdown--><blockquote>
+<img src="https://images.unsplash.com/photo-1541913299-273fd84d10c4?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=2000&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ" alt="Dark IDE"><p>Bored with regular IDE. Try this</p>
+</blockquote>
+<p>Dark themed apps, webisites are popular these day because it eye catching. You can easily do this for Arduino IDE (ver 1.8.5 or higher)</p>
+<ol>
+<li>
+<p><strong>First</strong> go <a href="https://github.com/jeffThompson/DarkArduinoTheme">this</a> git repo and <strong>download</strong>.</p>
+</li>
+<li>
+<p><strong>Navigate</strong> to lib folder on your device<br>
+for Windows <code>C:\Program Files (x86)\Arduino\lib</code><br>
+for Mac <code>/Applications/Arduino.app/Contents/Java/lib</code><br>
+for Linux <code>/usr/share/arduino/lib/</code></p>
+</li>
+<li>
+<p><strong>Replace</strong> the theme folder from the downloaded one. In case you need to revert make a <strong>Copy</strong> of original files.</p>
+</li>
+<li>
+<p><strong>Restart</strong> the Arduino IDE.</p>
+</li>
+</ol>
+<blockquote>
+<p>Ta Da</p>
+</blockquote>
+<!--kg-card-end: markdown--><figure class="kg-card kg-gallery-card kg-width-wide kg-card-hascaption"><div class="kg-gallery-container"><div class="kg-gallery-row"><div class="kg-gallery-image"><img src="http://localhost:2368/content/images/2021/02/dark.jpg" width="1920" height="1042" alt="Dark IDE" srcset="http://localhost:2368/content/images/size/w600/2021/02/dark.jpg 600w, http://localhost:2368/content/images/size/w1000/2021/02/dark.jpg 1000w, http://localhost:2368/content/images/size/w1600/2021/02/dark.jpg 1600w, http://localhost:2368/content/images/2021/02/dark.jpg 1920w" sizes="(min-width: 720px) 720px"></div><div class="kg-gallery-image"><img src="http://localhost:2368/content/images/2021/02/light.jpg" width="1913" height="1036" alt="Dark IDE" srcset="http://localhost:2368/content/images/size/w600/2021/02/light.jpg 600w, http://localhost:2368/content/images/size/w1000/2021/02/light.jpg 1000w, http://localhost:2368/content/images/size/w1600/2021/02/light.jpg 1600w, http://localhost:2368/content/images/2021/02/light.jpg 1913w" sizes="(min-width: 720px) 720px"></div></div></div><figcaption>Dark vs Light</figcaption></figure>]]></content:encoded></item><item><title><![CDATA[Variables]]></title><description><![CDATA[<!--kg-card-begin: markdown--><p>Variable is a specific name that you have assign on a data, sensor input, or constant that you will use later in the program.</p>
+<h4 id="declaringvariables">Declaring Variables</h4>
+<p>Before using variables you need to specify what type variable is it, name of the variable, and initial value(optional). The name of the</p>]]></description><link>http://localhost:2368/variables/</link><guid isPermaLink="false">5fd7c9d9e73c930ae908ba48</guid><category><![CDATA[Arduino]]></category><category><![CDATA[variables]]></category><dc:creator><![CDATA[Chamath Shamal]]></dc:creator><pubDate>Sat, 27 Jun 2020 15:52:17 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1527474305487-b87b222841cc?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=2000&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ" medium="image"/><content:encoded><![CDATA[<!--kg-card-begin: markdown--><img src="https://images.unsplash.com/photo-1527474305487-b87b222841cc?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=2000&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ" alt="Variables"><p>Variable is a specific name that you have assign on a data, sensor input, or constant that you will use later in the program.</p>
+<h4 id="declaringvariables">Declaring Variables</h4>
+<p>Before using variables you need to specify what type variable is it, name of the variable, and initial value(optional). The name of the variable should obey the following rules.</p>
+<ul>
+<li>Variables can consist of both uppercase (A-Z) and lowercase(a-z) letters, numbers 0 to 9, but cannot start with a number.</li>
+<li>Variables can not be the same names as Arduino keywords.</li>
+<li>Variables must have unique names for each.</li>
+<li>Variable names are case sensitive.</li>
+<li>Variables may not contain any special characters, except the underscore</li>
+</ul>
+<h4 id="variablescope">Variable Scope</h4>
+<p>Where you should specify the variable is called variable scope. The program will be different by where did you define the variable.</p>
+<h4 id="initializingvariables">Initializing Variables</h4>
+<p>You can initialize a variable if they were declared or not. But you should beware before initializing a variable, whether it has a valid data or not.</p>
+<h4 id="variablerollover">Variable Rollover</h4>
+<p>each variable type has a maximum/minimum size or capacity. When the variable exceeded the maximum, the variable become roll over.<br>
+eg:-<br>
+<code>x = 255; // 0-255 is the capacity</code><br>
+<code>x =x+1; // now x is exceed 255 and now x contains 0 - rolls over</code></p>
+<p>this is possible with the minimum too.<br>
+eg:-<br>
+<code>byte x ;</code><br>
+<code>x = 0 ;</code><br>
+<code>x = x - 1 ;       // x now contains 255 - rolls over in neg. direction</code></p>
+<h3 id="usingvariables">using variables</h3>
+<p>after you have assigned the variable, you can set the variable equal to the value you wished to store on that variable.</p>
+<p>Voltageinput = 0;<br>
+Voltageinput = analogRead(2); // set variable to analog pin 2 readings.</p>
+<h3 id="typesofvariables">types of variables</h3>
+<p>there are many variable types. You should consider the type of variable because each type of variable has limitations. You can not use variables without having a clear idea of how your variable behaves in the program.</p>
+<p><strong>char</strong> - used to store a character value. written in single quotes 'A'. stored as numbers. (in the ASCII value of the character) The size of the char data type is at least 8 bits.</p>
+<p><strong>String</strong> - used to store multiple characters. written in double quotes &quot;ABC&quot;.Mostly like an array of characters.</p>
+<p><strong>byte</strong> - stores an 8-bit unsigned number, from 0 to 255</p>
+<p><strong>int</strong> - primary data-type for numbers.Stores a 2 byte signed integer value in the range of -32,768 to 32,767.</p>
+<p><strong>long</strong>-extended size variables for number storage, and store 4 bytes, in range of -2,147,483,648 to 2,147,483,647.</p>
+<p><strong>float</strong> -Datatype for floating-point numbers, a number that has a decimal point, and store 4 bytes.in the range of as large as 3.4028235E+38 and as low as -3.4028235E+38</p>
+<p><strong>double</strong>- Double-precision floating-point number. On some boards based on ATmega like Uno has 4-byte size with no gain in precision. In Arduino Due, doubles have 8-byte (64 bit) precision.</p>
+<p>I will describe more about data types with related projects and programs.Without clear knowledge, you will have to experience unpredictable outcomes.</p>
+<blockquote>
+<pre><code>stay tuned...
+</code></pre>
+</blockquote>
+<!--kg-card-end: markdown-->]]></content:encoded></item><item><title><![CDATA[Code in Arduino]]></title><description><![CDATA[complete guide for beginners. Learn Arduino today.Arduino is an open-source electronics platform based on easy-to-use hardware and software.... 
+]]></description><link>http://localhost:2368/code_in_arduino/</link><guid isPermaLink="false">5fd7c9d9e73c930ae908ba47</guid><category><![CDATA[Arduino]]></category><category><![CDATA[Functions]]></category><dc:creator><![CDATA[Chamath Shamal]]></dc:creator><pubDate>Sat, 27 Jun 2020 08:00:04 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=2000&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ" medium="image"/><content:encoded><![CDATA[<!--kg-card-begin: markdown--><blockquote>
+<img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=2000&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ" alt="Code in Arduino"><p>In my experience, Arduino is very simple and easy to learn than many other languages. This language basically has 3 parts.</p>
+</blockquote>
+<ol>
+<li>
+<pre><code>Functions
+</code></pre>
+</li>
+<li>
+<pre><code>Values (variables and constants)
+</code></pre>
+</li>
+<li>
+<pre><code>structures
+</code></pre>
+</li>
+</ol>
+<h3 id="functions">Functions</h3>
+<p>Like in mathematics, these functions can describe some characteristics, or it does some certain tasks. I will explain the basic functions that we use every time.</p>
+<p><strong>Digital I/O</strong></p>
+<p>digitalRead() read value from specified digital pin either HIGH (1) or LOW (0).<br>
+syntax | <code>digitalRead(pin);</code><br>
+returns : HIGH (1) or LOW(0)</p>
+<p>digitalWrite() Write HIGH (1) or LOW (0) value to specified digital pin.<br>
+syntax | <code>digitalWrite(pin, value);</code><br>
+returns : Nothing</p>
+<p>pinMode() set the behavior of a digital pin to act as an INPUT or OUTPUT. Also, you can enable internal pull-up resistors by INPUT_PULLUP. using only INPUT will disable internal pull-up resistors.</p>
+<p>syntax | <code>pinMode(pin, mode); </code><br>
+returns: Nothing</p>
+<p>analogRead() read value from specified analog pin.Most of the Arduino boards support 10 bit Max resolution (0-1023) and Arduino has multichannel ADC (analog to digital converter).</p>
+<p>This function actually maps the input voltage 0 and operating voltage ( 5 or 3.3 depending on your board. Atmega bases Arduino board ( Uno, Mega, Nano,...)  takes 100 microseconds to read the input voltage.</p>
+<p>syntax | <code>analogRead(pin);</code><br>
+returns: value in between 0-1023  as your input voltage. read more.</p>
+<p>analogWrite() Write an analog value to a specified analog pin. Actually this function writes analog value using PWM Wave (Pulse Width Modulation). Boards support PWM frequencies.<br>
+check here.</p>
+<p>syntax | <code>analogWrite(pin, value);</code><br>
+value is the duty cycle, an integer value between 0-255.<br>
+returns: Nothing</p>
+<p>delay() hold/pause the program for a specified time (in milliseconds).</p>
+<p>1000 milliseconds=1 second.</p>
+<p>syntax | <code>delay(value in ms);</code><br>
+value is an unsigned long.</p>
+<p>returns: Nothing</p>
+<p>delayMicroseconds() hold/pause the program for a specified time (in microseconds).</p>
+<p>syntax |<code> delay(value in us);</code><br>
+value is an unsigned int.</p>
+<p>returns: Nothing</p>
+<p>millis() return the elapsed time in milliseconds since the program began.</p>
+<p>syntax | <code>millis();</code></p>
+<p>returns: the time left in milliseconds as unsigned long. this will overflow(become zero) like after 50days.</p>
+<p>micros() return the elapsed time in microseconds since the program began.</p>
+<p>syntax | <code>micros();</code></p>
+<p>returns: the time left in microseconds as unsigned long.</p>
+<p>And finally, Arduino language is based on C/C++, therefore, things you type after // is known as a comment. it will not affect the program.</p>
+<!--kg-card-end: markdown--><pre><code>// this is a comment
+
+/* this is how 
+to comment a paragraph */</code></pre><!--kg-card-begin: markdown--><p>Look at the example blink code again and try it without delay().</p>
+<p>The answer can be found on <a href="https://www.arduino.cc/en/Tutorial/BlinkWithoutDelay">arduino.cc.</a></p>
+<!--kg-card-end: markdown-->]]></content:encoded></item><item><title><![CDATA[Getting Started with Arduino]]></title><description><![CDATA[complete guide for beginners. Learn Arduino today.Arduino is an open-source electronics platform based on easy-to-use hardware and software.... ]]></description><link>http://localhost:2368/arduino_s1/</link><guid isPermaLink="false">5fd7c9d9e73c930ae908ba46</guid><category><![CDATA[Arduino]]></category><dc:creator><![CDATA[Chamath Shamal]]></dc:creator><pubDate>Sat, 27 Jun 2020 07:34:16 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1562976540-78c559c80296?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=2000&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ" medium="image"/><content:encoded><![CDATA[<!--kg-card-begin: markdown--><blockquote>
+<img src="https://images.unsplash.com/photo-1562976540-78c559c80296?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=2000&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ" alt="Getting Started with Arduino"><p>Arduino is an open-source electronics platform based on easy-to-use hardware and software</p>
+</blockquote>
+<p>This series will help you to understand what is Arduino, This article is based on how to use Arduino IDE, how to set up your first sketch etc.</p>
+<h3 id="thingsyouwillneed">Things you will need</h3>
+<pre><code> a Laptop or PC
+ Arduino IDE
+ an Arduino board 
+ a Serial cable 
+</code></pre>
+<p><strong>First</strong> you should <a href="https://www.arduino.cc/en/Main/Software">download</a> the <strong>Arduino IDE</strong>. Make sure you download the correct software for your operating system. install it.install the necessary drivers (will pop-up while installing IDE). For some Arduino compatible boards comes with different drivers. As an example some <strong>Arduino nano</strong> comes with <strong>CH340 driver</strong>. You have to manually download and install them.<a href="https://learn.sparkfun.com/tutorials/how-to-install-ch340-drivers/all#drivers-if-you-need-them">Here</a> CH340 drivers on Sparkfun.</p>
+<!--kg-card-end: markdown--><figure class="kg-card kg-image-card kg-card-hascaption"><img src="http://localhost:2368/content/images/2020/12/download.jpg" class="kg-image" alt="Getting Started with Arduino" srcset="http://localhost:2368/content/images/size/w600/2020/12/download.jpg 600w, http://localhost:2368/content/images/2020/12/download.jpg 871w" sizes="(min-width: 720px) 720px"><figcaption>Download&nbsp;</figcaption></figure><!--kg-card-begin: markdown--><p><strong>Next</strong> plug your Arduino to PC or Laptop.Then go to Device Manager.<br>
+In windows pc go to <em>Control panel&gt; Device Manager &gt; Ports &gt;</em> your device should be show up here. if it is not there you have to <strong>reinstall</strong> drivers.In mac OS there is no &quot;Device Manager&quot;. Check <em>menu &gt; About this Mac &gt; System Report...&gt; USB</em>.</p>
+<!--kg-card-end: markdown--><p></p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="http://localhost:2368/content/images/2020/12/devicem.jpg" class="kg-image" alt="Getting Started with Arduino"><figcaption>Device Manager</figcaption></figure><!--kg-card-begin: markdown--><p><strong>Now</strong> open the Arduino IDE.First of all go to Tools&gt; Board&gt; select you board in my example Arduino Uno. Then below the boards select your <em>COM port &gt; (in my case) COM9.</em></p>
+<!--kg-card-end: markdown--><figure class="kg-card kg-image-card"><img src="http://localhost:2368/content/images/2020/12/com.jpg" class="kg-image" alt="Getting Started with Arduino" srcset="http://localhost:2368/content/images/size/w600/2020/12/com.jpg 600w, http://localhost:2368/content/images/2020/12/com.jpg 875w" sizes="(min-width: 720px) 720px"></figure><!--kg-card-begin: markdown--><p><strong>Now you can start your coding.</strong><br>
+If you are not familiar with coding don't worry. you can use examples built-in. go to <em>files &gt; examples &gt; basic &gt; blink</em> .</p>
+<!--kg-card-end: markdown--><figure class="kg-card kg-image-card kg-card-hascaption"><img src="http://localhost:2368/content/images/2020/12/blink.jpg" class="kg-image" alt="Getting Started with Arduino" srcset="http://localhost:2368/content/images/size/w600/2020/12/blink.jpg 600w, http://localhost:2368/content/images/2020/12/blink.jpg 879w" sizes="(min-width: 720px) 720px"><figcaption>Blink.ino</figcaption></figure><!--kg-card-begin: markdown--><p>then <strong>save</strong> the sketch, <strong>compile</strong> it. click <strong>upload</strong>. wait and enjoy !!<br>
+(from left to right : compile , upload , new file, open, save, serial monitor)</p>
+<!--kg-card-end: markdown--><figure class="kg-card kg-image-card"><img src="http://localhost:2368/content/images/2020/12/tabs.jpg" class="kg-image" alt="Getting Started with Arduino" srcset="http://localhost:2368/content/images/size/w600/2020/12/tabs.jpg 600w, http://localhost:2368/content/images/2020/12/tabs.jpg 869w" sizes="(min-width: 720px) 720px"></figure><figure class="kg-card kg-code-card"><pre><code>// the setup function runs once when you press reset or power the board
+void setup() {
+  // initialize digital pin LED_BUILTIN as an output.
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+// the loop function runs over and over again forever
+void loop() {
+  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(1000);                       // wait for a second
+  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+  delay(1000);                       // wait for a second
+}</code></pre><figcaption>Blink sketch</figcaption></figure>]]></content:encoded></item></channel></rss>

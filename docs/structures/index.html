@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Structures-I</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="anonymous">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net/" crossorigin="anonymous">
+    <link rel="preconnect" href="https://widget.appfleet.com/" crossorigin="anonymous">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Red+Hat+Display:400,500,700&display=swap" />
+    <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css" />
+    
+    <link rel="prefetch" href="https://appfleet.com/blog">
+    <link rel="prerender" href="https://appfleet.com/blog">
+
+    <link rel="icon" href="../favicon.png" type="image/png" />
+    <link rel="canonical" href="index.html" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="amp/index.html" />
+    
+    <meta property="og:site_name" content="Falcon Blog" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Structures-I" />
+    <meta property="og:description" content="Every programming language has its own structure. Structure of the program will improve the clarity and quality. It also improves development time as well.  There are some main structures common in every language (way of using them could be different in some cases.)  control structures  1.selection  2.repetition subroutines" />
+    <meta property="og:url" content="http://localhost:2368/structures/" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1532622785990-d2c36a76f5a6?ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;fm&#x3D;jpg&amp;crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;w&#x3D;2000&amp;fit&#x3D;max&amp;ixid&#x3D;eyJhcHBfaWQiOjExNzczfQ" />
+    <meta property="article:published_time" content="2020-06-28T11:09:09.000Z" />
+    <meta property="article:modified_time" content="2020-12-15T16:53:06.000Z" />
+    <meta property="article:tag" content="Arduino" />
+    <meta property="article:tag" content="structures" />
+    
+    <meta property="article:publisher" content="https://www.facebook.com/chamath.shamal/" />
+    <meta property="article:author" content="https://www.facebook.com/chamath.shamal" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Structures-I" />
+    <meta name="twitter:description" content="Every programming language has its own structure. Structure of the program will improve the clarity and quality. It also improves development time as well.  There are some main structures common in every language (way of using them could be different in some cases.)  control structures  1.selection  2.repetition subroutines" />
+    <meta name="twitter:url" content="http://localhost:2368/structures/" />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1532622785990-d2c36a76f5a6?ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;fm&#x3D;jpg&amp;crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;w&#x3D;2000&amp;fit&#x3D;max&amp;ixid&#x3D;eyJhcHBfaWQiOjExNzczfQ" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Chamath Shamal" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Arduino, structures" />
+    <meta name="twitter:site" content="@chamath_shamal" />
+    <meta name="twitter:creator" content="@chamath_shamal" />
+    <meta property="og:image:width" content="2000" />
+    <meta property="og:image:height" content="1333" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Falcon Blog",
+        "url": "http://localhost:2368/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/content/images/2021/02/Cover-3.png"
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Chamath Shamal",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/content/images/2020/12/79373047_1873608092786010_2407857463270309888_n.jpg",
+            "width": 960,
+            "height": 960
+        },
+        "url": "http://localhost:2368/author/chamath/",
+        "sameAs": [
+            "https://www.facebook.com/chamath.shamal",
+            "https://twitter.com/chamath_shamal"
+        ]
+    },
+    "headline": "Structures-I",
+    "url": "http://localhost:2368/structures/",
+    "datePublished": "2020-06-28T11:09:09.000Z",
+    "dateModified": "2020-12-15T16:53:06.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://images.unsplash.com/photo-1532622785990-d2c36a76f5a6?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=2000&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ",
+        "width": 2000,
+        "height": 1333
+    },
+    "keywords": "Arduino, structures",
+    "description": "Every programming language has its own structure. Structure of the program will\nimprove the clarity and quality. It also improves development time as well.\nThere are some main structures common in every language (way of using them could\nbe different in some cases.)\n\n * control structures\n   1.selection\n   2.repetition\n * subroutines\n * blocks\n\nSome basic operations are here that are very useful in programming.\n\nArithmetics\nNameOperatorDescriptionAddition+Add two operandsSubtract-Subtract second ",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 3.40" />
+    <link rel="alternate" type="application/rss+xml" title="Falcon Blog" href="../rss/index.html" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism.min.css" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171097085-1 "></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-171097085-1');
+</script>
+
+</head>
+<body class="post-template tag-arduino tag-structures">
+    <svg width="0" height="0" class="hidden">
+        <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="linkedin">
+            <title>LinkedIn icon</title>
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+        </symbol>
+        <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="tumblr">
+            <title>Tumblr icon</title>
+            <path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"></path>
+        </symbol>
+        <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="github">
+            <title>GitHub icon</title>
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+        </symbol>
+        <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="facebook">
+            <title>Facebook icon</title>
+            <path d="M23.998 12c0-6.628-5.372-12-11.999-12C5.372 0 0 5.372 0 12c0 5.988 4.388 10.952 10.124 11.852v-8.384H7.078v-3.469h3.046V9.356c0-3.008 1.792-4.669 4.532-4.669 1.313 0 2.686.234 2.686.234v2.953H15.83c-1.49 0-1.955.925-1.955 1.874V12h3.328l-.532 3.469h-2.796v8.384c5.736-.9 10.124-5.864 10.124-11.853z"></path>
+        </symbol>
+        <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="twitter">
+            <title>Twitter icon</title>
+            <path d="M23.954 4.569a10 10 0 0 1-2.825.775 4.958 4.958 0 0 0 2.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 0 0-8.384 4.482C7.691 8.094 4.066 6.13 1.64 3.161a4.822 4.822 0 0 0-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 0 1-2.228-.616v.061a4.923 4.923 0 0 0 3.946 4.827 4.996 4.996 0 0 1-2.212.085 4.937 4.937 0 0 0 4.604 3.417 9.868 9.868 0 0 1-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 0 0 7.557 2.209c9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63a9.936 9.936 0 0 0 2.46-2.548l-.047-.02z"></path>
+        </symbol>
+
+    </svg>
+
+    <div class="site-wrapper">
+
+        
+
+<header class="site-header">
+    <div class="outer site-nav-main">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left-wrapper">
+        <div class="site-nav-left">
+                <a class="site-nav-logo" href="../index.html"><img src="../content/images/2021/02/Cover-3.png" alt="Falcon Blog" /></a>
+            <div class="site-nav-content">
+                        <!-- primary navigation -->
+    <ul class="nav">
+            <li class="nav-home">
+                <a href="../index.html">Home</a>
+            </li>
+            <li class="nav-arduino">
+                <a href="../tag/arduino/index.html">Arduino</a>
+            </li>
+            <li class="nav-iot">
+                <a href="../tag/iot/index.html">IoT</a>
+            </li>
+            <li class="nav-author">
+                <a href="../author/chamath/index.html">Author</a>
+            </li>
+    </ul>
+
+                    <span class="nav-post-title ">Structures-I</span>
+            </div>
+        </div>
+    </div>
+    <div class="site-nav-right">
+                <!-- secondary navigation -->
+    <ul class="nav">
+            <li class="nav-linkedin">
+                <a href="https://www.linkedin.com/in/chamath-shamal/" class="social-link">
+                    <svg width="16" height="16" role="img" aria-label="linkedin icon">
+                        <use xlink:href="#linkedin"></use>
+                    </svg>
+                </a>
+            </li>
+            <li class="nav-github">
+                <a href="https://github.com/CSham31" class="social-link">
+                    <svg width="16" height="16" role="img" aria-label="github icon">
+                        <use xlink:href="#github"></use>
+                    </svg>
+                </a>
+            </li>
+            <li class="nav-tumblr">
+                <a href="https://www.tumblr.com/blog/csham31" class="social-link">
+                    <svg width="16" height="16" role="img" aria-label="tumblr icon">
+                        <use xlink:href="#tumblr"></use>
+                    </svg>
+                </a>
+            </li>
+            <li class="nav-facebook">
+                <a href="https://www.facebook.com/chamath.shamal" class="social-link">
+                    <svg width="16" height="16" role="img" aria-label="facebook icon">
+                        <use xlink:href="#facebook"></use>
+                    </svg>
+                </a>
+            </li>
+            <li class="nav-twitter">
+                <a href="https://twitter.com/chamath_shamal" class="social-link">
+                    <svg width="16" height="16" role="img" aria-label="twitter icon">
+                        <use xlink:href="#twitter"></use>
+                    </svg>
+                </a>
+            </li>
+    </ul>
+
+
+    </div>
+</nav>
+    </div>
+</div></header>
+
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post tag-arduino tag-structures ">
+
+            <header class="post-full-header">
+
+                <section class="post-full-tags">
+                    <a href="../tag/arduino/index.html">Arduino</a>
+                </section>
+
+                <h1 class="post-full-title">Structures-I</h1>
+
+
+                <div class="post-full-byline">
+
+                    <section class="post-full-byline-content">
+
+                        <ul class="author-list">
+                            <li class="author-list-item">
+
+                                <div class="author-card">
+                                    <img class="author-profile-image" src="../content/images/size/w100/2020/12/79373047_1873608092786010_2407857463270309888_n.jpg"
+                                        alt="Chamath Shamal" />
+                                    <div class="author-info">
+                                        <div class="bio">
+                                            <h2>Chamath Shamal</h2>
+                                            <p>Dedicated For Electronic Enthusiasts</p>
+                                            <p><a href="../author/chamath/index.html">More posts</a> by Chamath Shamal.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <a href="../author/chamath/index.html" class="author-avatar">
+                                    <img class="author-profile-image" src="../content/images/size/w100/2020/12/79373047_1873608092786010_2407857463270309888_n.jpg"
+                                        alt="Chamath Shamal" />
+                                </a>
+
+                            </li>
+                        </ul>
+
+                        <section class="post-full-byline-meta">
+                            <h4 class="author-name"><a href="../author/chamath/index.html">Chamath Shamal</a></h4>
+                            <div class="byline-meta-content">
+                                <time class="byline-meta-date"
+                                    datetime="2020-06-28">28 Jun 2020</time>
+                                <span class="byline-reading-time"><span class="bull">&bull;</span>
+                                    3 min read</span>
+                            </div>
+                        </section>
+
+                    </section>
+
+
+                </div>
+            </header>
+
+            <figure class="post-full-image">
+                <img srcset="https://images.unsplash.com/photo-1532622785990-d2c36a76f5a6?ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;fm&#x3D;jpg&amp;crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;w&#x3D;2000&amp;fit&#x3D;max&amp;ixid&#x3D;eyJhcHBfaWQiOjExNzczfQ 300w,
+                            https://images.unsplash.com/photo-1532622785990-d2c36a76f5a6?ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;fm&#x3D;jpg&amp;crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;w&#x3D;2000&amp;fit&#x3D;max&amp;ixid&#x3D;eyJhcHBfaWQiOjExNzczfQ 600w,
+                            https://images.unsplash.com/photo-1532622785990-d2c36a76f5a6?ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;fm&#x3D;jpg&amp;crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;w&#x3D;2000&amp;fit&#x3D;max&amp;ixid&#x3D;eyJhcHBfaWQiOjExNzczfQ 1000w,
+                            https://images.unsplash.com/photo-1532622785990-d2c36a76f5a6?ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;fm&#x3D;jpg&amp;crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;w&#x3D;2000&amp;fit&#x3D;max&amp;ixid&#x3D;eyJhcHBfaWQiOjExNzczfQ 2000w" sizes="(max-width: 800px) 400px,
+                        (max-width: 1170px) 1170px,
+                            2000px" src="https://images.unsplash.com/photo-1532622785990-d2c36a76f5a6?ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;fm&#x3D;jpg&amp;crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;w&#x3D;2000&amp;fit&#x3D;max&amp;ixid&#x3D;eyJhcHBfaWQiOjExNzczfQ" alt="Structures-I" />
+            </figure>
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <!--kg-card-begin: markdown--><p>Every programming language has its own structure. Structure of the program will improve the clarity and quality. It also improves development time as well.<br>
+There are some main structures common in every language (way of using them could be different in some cases.)</p>
+<ul>
+<li>control structures<br>
+1.selection<br>
+2.repetition</li>
+<li>subroutines</li>
+<li>blocks</li>
+</ul>
+<p>Some basic operations are here that are very useful in programming.</p>
+<h3 id="arithmetics">Arithmetics</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Addition</td>
+<td>+</td>
+<td>Add two operands</td>
+</tr>
+<tr>
+<td>Subtract</td>
+<td>-</td>
+<td>Subtract second from the first one</td>
+</tr>
+<tr>
+<td>Multiplication</td>
+<td>*</td>
+<td>Multiply operand</td>
+</tr>
+<tr>
+<td>Division</td>
+<td>/</td>
+<td>Divide numerator by denominator</td>
+</tr>
+<tr>
+<td>Modulo</td>
+<td>%</td>
+<td>Remainder after integer division</td>
+</tr>
+<tr>
+<td>Assign</td>
+<td>=</td>
+<td>Store the value of RHS to the LHS variable</td>
+</tr>
+</tbody>
+</table>
+<h3 id="comparison">Comparison</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>equal to</td>
+<td>==</td>
+<td>check if two values are equal or not, If equal return true</td>
+</tr>
+<tr>
+<td>not equal to</td>
+<td>!=</td>
+<td>check if two values are equal or not, If not equal return true</td>
+</tr>
+<tr>
+<td>less than</td>
+<td>&lt;</td>
+<td>check if LHS is less than the RHS, if yes return true</td>
+</tr>
+<tr>
+<td>greater than</td>
+<td>&gt;</td>
+<td>check if LHS is greter than the RHS, if yes return true</td>
+</tr>
+<tr>
+<td>less than or equal</td>
+<td>&lt;=</td>
+<td>check if LHS is less than or equal the RHS, if yes return true</td>
+</tr>
+<tr>
+<td>greater than or equal</td>
+<td>&gt;=</td>
+<td>check if LHS is greater than or equal the RHS, if yes return true</td>
+</tr>
+</tbody>
+</table>
+<h3 id="booleanoperations">Boolean Operations</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>and</td>
+<td>&amp;&amp;</td>
+<td>check if both operands are not zero, return true</td>
+</tr>
+<tr>
+<td>or</td>
+<td>||</td>
+<td>check if any operand is not zero, return true</td>
+</tr>
+<tr>
+<td>not</td>
+<td>!</td>
+<td>return the negation of an operand</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bitwiseoperations">Bitwise Operations</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bitwise and</td>
+<td>&amp;</td>
+<td>AND operation on bitwise arithmetics</td>
+</tr>
+<tr>
+<td>bit shift left</td>
+<td>&lt;&lt;</td>
+<td>the bits in the left operand will be shifted left by number of steps in the right operand.</td>
+</tr>
+<tr>
+<td>bit shift right</td>
+<td>&gt;&gt;</td>
+<td>the bits in the left operand will beshifted right by number of steps in the right operand.</td>
+</tr>
+<tr>
+<td>bitwise xor</td>
+<td>^</td>
+<td>XOR operation on bitwise arithmetics</td>
+</tr>
+<tr>
+<td>bitwise or</td>
+<td>|</td>
+<td>OR operation on bitwise arithmetics</td>
+</tr>
+<tr>
+<td>bitwise not</td>
+<td>~</td>
+<td>NOT operation on bitwise arithmetics</td>
+</tr>
+</tbody>
+</table>
+<!--kg-card-end: markdown--><!--kg-card-begin: markdown--><h2 id="controlstructures">Control Structures</h2>
+<p>Control structures are the blocks that determine the direction of the program flows.</p>
+<h3 id="selection">Selection</h3>
+<ol>
+<li>if .. else</li>
+</ol>
+<pre><code>    if (condition){
+       task 1 }
+   else {
+       task 2 }
+</code></pre>
+<p>In this method you can determine what task should be done depending on that &quot;condition&quot; is True or False. If the condition is True program  will run task 1, else it will run task 2. Also, we can check many conditions by using &quot;else if&quot;.</p>
+<pre><code>```
+ if (condition 1){
+     task 1 }
+ else if (condition 2) {
+     task 2 }
+ else if (condition 3) {
+     task 3 } 
+ .
+ .
+ .
+ else{
+     task n} 
+ ```
+</code></pre>
+<ol start="2">
+<li>
+<p>while</p>
+<pre><code>while(condition){
+ task   }  
+</code></pre>
+<p>In this method task will run as long as the condition is true, otherwise, the task will not run.</p>
+</li>
+<li>
+<p>do .. while</p>
+<pre><code>do{
+task } while ( condition );
+</code></pre>
+<p>this is also similar to &quot;while&quot;, but in this method, the task will run already once before program check the condition is True or False.</p>
+</li>
+</ol>
+<h3 id="repetition">Repetition</h3>
+<ol>
+<li>for loop</li>
+</ol>
+<pre><code>for (start,end condition ,step){
+        task  }
+</code></pre>
+<p>Using for loops we can repeat the same task, again and again, a finite number of times without repeating the code.</p>
+<ol start="2">
+<li>while loop</li>
+</ol>
+<pre><code>while(True){
+        task }
+</code></pre>
+<p>using while we discussed above we can repeat a task infinitely by make the statement &quot;True&quot;. We can use &quot;while&quot; for finite loops like this.</p>
+<pre><code>    int step=start ;
+    while(step&lt;end condition){
+        task
+        step+=step; }
+</code></pre>
+<p>note: in above methods we can choose start value, end value and also how many steps should be the next iteration.<br>
+eg:-</p>
+<pre><code>    for(int i=0, i&lt;=10; i+=1){
+        Serial.print(i);
+        Serial.print(',');} 
+</code></pre>
+<p>result&gt;&gt; <code>0,1,2,3,4,5,6,7,8,9,10</code></p>
+<pre><code>    for(int i=0, i&lt;=10; i+=2){
+        Serial.print(i);
+        Serial.print(',');} 
+</code></pre>
+<p>result&gt;&gt; <code>0,2,4,6,8,10</code></p>
+<p>I will discuss about subroutines and blocks in another article so will easy to read.</p>
+<blockquote>
+<p>Stay tuned</p>
+</blockquote>
+<!--kg-card-end: markdown--><!--kg-card-begin: markdown--><blockquote>
+<p>“Structure significantly influences behavior, thereby dramatically impacting results.” ~ Chris Hutchinson</p>
+</blockquote>
+<!--kg-card-end: markdown-->
+                </div>
+            </section>
+
+
+           
+            <section class="post-full-comments">
+                <div id="disqus_thread"></div>
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = "http://localhost:2368/structures/";
+                        this.page.identifier = "ghost-5ef87a4edf4e7d0052170538"
+                    };
+                    (function () {
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://falcnblog.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+
+            </section>
+           
+
+        </article>
+
+    </div>
+</main>
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            <article class="read-next-card">
+                <header class="read-next-card-header">
+                    <h3><span>More in</span> <a href="../tag/arduino/index.html">Arduino</a></h3>
+                </header>
+                <div class="read-next-card-content">
+                    <ul>
+                        <li>
+                            <h4><a href="../hand-full-of-leds/index.html">Handful of LEDs</a></h4>
+                            <div class="read-next-card-meta">
+                                <p><time datetime="2020-12-16">16 Dec 2020</time> –
+                                    </p>
+                            </div>
+                        </li>
+                        <li>
+                            <h4><a href="../stm32/index.html">STM32</a></h4>
+                            <div class="read-next-card-meta">
+                                <p><time datetime="2020-12-16">16 Dec 2020</time> –
+                                    3 min read</p>
+                            </div>
+                        </li>
+                        <li>
+                            <h4><a href="../nodemcu/index.html">NodeMCU</a></h4>
+                            <div class="read-next-card-meta">
+                                <p><time datetime="2020-12-16">16 Dec 2020</time> –
+                                    2 min read</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <footer class="read-next-card-footer">
+                    <a href="../tag/arduino/index.html">See all 8 posts
+                        →</a>
+                </footer>
+            </article>
+
+            <article class="post-card post ">
+
+    <a class="post-card-image-link" href="../structures-ii/index.html">
+        <img class="post-card-image"
+            srcset="https://images.unsplash.com/photo-1607971422532-73f9d45d7a47?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MXwxMTc3M3wwfDF8YWxsfDU3fHx8fHx8Mnw&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 300w,
+                    https://images.unsplash.com/photo-1607971422532-73f9d45d7a47?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MXwxMTc3M3wwfDF8YWxsfDU3fHx8fHx8Mnw&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 600w,
+                    https://images.unsplash.com/photo-1607971422532-73f9d45d7a47?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MXwxMTc3M3wwfDF8YWxsfDU3fHx8fHx8Mnw&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 1000w,
+                    https://images.unsplash.com/photo-1607971422532-73f9d45d7a47?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MXwxMTc3M3wwfDF8YWxsfDU3fHx8fHx8Mnw&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="https://images.unsplash.com/photo-1607971422532-73f9d45d7a47?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MXwxMTc3M3wwfDF8YWxsfDU3fHx8fHx8Mnw&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000"
+            alt="Structures-II"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="../structures-ii/index.html">
+
+            <header class="post-card-header">
+                <h2 class="post-card-title">Structures-II</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>In Structure-I includes about control structures and basic operations in Arduino Language.  control structures  1.selection  2.repetition subroutines blocks subroutings blocks</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        Chamath Shamal
+                    </div>
+            
+                    <a href="../author/chamath/index.html" class="static-avatar">
+                        <img class="author-profile-image" src="../content/images/size/w100/2020/12/79373047_1873608092786010_2407857463270309888_n.jpg" alt="Chamath Shamal" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="../author/chamath/index.html">Chamath Shamal</a></span>
+                <span class="post-card-byline-date"><time datetime="2020-12-15">15 Dec 2020</time> <span class="bull">&bull;</span> 1 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+            <article class="post-card post tag-arduino tag-dark tag-theme ">
+
+    <a class="post-card-image-link" href="../dark-ide/index.html">
+        <img class="post-card-image"
+            srcset="https://images.unsplash.com/photo-1541913299-273fd84d10c4?ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;fm&#x3D;jpg&amp;crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;w&#x3D;2000&amp;fit&#x3D;max&amp;ixid&#x3D;eyJhcHBfaWQiOjExNzczfQ 300w,
+                    https://images.unsplash.com/photo-1541913299-273fd84d10c4?ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;fm&#x3D;jpg&amp;crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;w&#x3D;2000&amp;fit&#x3D;max&amp;ixid&#x3D;eyJhcHBfaWQiOjExNzczfQ 600w,
+                    https://images.unsplash.com/photo-1541913299-273fd84d10c4?ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;fm&#x3D;jpg&amp;crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;w&#x3D;2000&amp;fit&#x3D;max&amp;ixid&#x3D;eyJhcHBfaWQiOjExNzczfQ 1000w,
+                    https://images.unsplash.com/photo-1541913299-273fd84d10c4?ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;fm&#x3D;jpg&amp;crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;w&#x3D;2000&amp;fit&#x3D;max&amp;ixid&#x3D;eyJhcHBfaWQiOjExNzczfQ 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="https://images.unsplash.com/photo-1541913299-273fd84d10c4?ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;fm&#x3D;jpg&amp;crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;w&#x3D;2000&amp;fit&#x3D;max&amp;ixid&#x3D;eyJhcHBfaWQiOjExNzczfQ"
+            alt="Dark IDE"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="../dark-ide/index.html">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">Arduino</div>
+                <h2 class="post-card-title">Dark IDE</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>Bored with regular IDE. Try this  Dark themed apps, webisites are popular these day because it eye catching. You can easily do this for Arduino IDE (ver 1.8.5</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        Chamath Shamal
+                    </div>
+            
+                    <a href="../author/chamath/index.html" class="static-avatar">
+                        <img class="author-profile-image" src="../content/images/size/w100/2020/12/79373047_1873608092786010_2407857463270309888_n.jpg" alt="Chamath Shamal" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="../author/chamath/index.html">Chamath Shamal</a></span>
+                <span class="post-card-byline-date"><time datetime="2020-06-28">28 Jun 2020</time> <span class="bull">&bull;</span> 1 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+        </div>
+    </div>
+</aside>
+
+
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="../index.html">Falcon Blog</a> &copy; 2021</section>
+                <nav class="site-footer-nav">
+                    <a href="../index.html">Latest Posts</a>
+                    <a href="https://www.facebook.com/chamath.shamal/" target="_blank" rel="noopener">Facebook</a>
+                    <a href="https://twitter.com/chamath_shamal" target="_blank" rel="noopener">Twitter</a>
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+    </script>
+    <script src="../assets/built/casper.js%3Fv=42a581978d"></script>
+
+    <script>
+        // Parse the URL parameter
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        // Give the parameter a variable name
+        var action = getParameterByName('action');
+
+        $(document).ready(function () {
+            if (action == 'subscribe') {
+                $('body').addClass("subscribe-success");
+            }
+
+            $('.subscribe-success-message .subscribe-close').click(function () {
+                $('.subscribe-success-message').addClass('close');
+            });
+
+            // Reset form on opening subscrion overlay
+            $('.subscribe-button').click(function() {
+                $('.subscribe-overlay form').removeClass();
+                $('.subscribe-email').val('');
+            });
+        });
+    </script>
+
+    <script>
+    $(document).ready(function () {
+        // FitVids - start
+        var $postContent = $(".post-full-content");
+        $postContent.fitVids();
+        // FitVids - end
+
+        // Replace nav with title on scroll - start
+        Casper.stickyNavTitle({
+            navSelector: '.site-nav-main',
+            titleSelector: '.post-full-title',
+            activeClass: 'nav-post-title-active'
+        });
+        // Replace nav with title on scroll - end
+
+        // Hover on avatar
+        var hoverTimeout;
+        $('.author-list-item').hover(function () {
+            var $this = $(this);
+
+            clearTimeout(hoverTimeout);
+
+            $('.author-card').removeClass('hovered');
+            $(this).children('.author-card').addClass('hovered');
+
+        }, function () {
+            var $this = $(this);
+
+            hoverTimeout = setTimeout(function () {
+                $this.children('.author-card').removeClass('hovered');
+            }, 800);
+        });
+    });
+</script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/prism.min.js"></script>
+
+</body>
+</html>

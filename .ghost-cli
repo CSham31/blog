@@ -1,5 +1,7 @@
 {
-  "active-version": "3.40.1",
-  "cli-version": "1.15.3",
-  "name": "ghost-local"
+  "active-version": "3.42.5",
+  "cli-version": "1.17.1",
+  "name": "ghost-local",
+  "previous-version": "3.40.1",
+  "node-version": "12.20.0"
 }

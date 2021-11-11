@@ -1,0 +1,10 @@
+.related-wrapper {
+    margin-top: 6rem;
+    padding: 4.5rem 0 3rem;
+    background-color: var(--lighter-gray-color);
+}
+
+.related-title {
+    margin-bottom: 3rem;
+    font-size: 1.9rem;
+}

@@ -87,7 +87,7 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 3.42" />
+    <meta name="generator" content="Ghost 4.22" />
     <link rel="alternate" type="application/rss+xml" title="CSham&#x27;s Blog" href="../../rss/index.html" />
 
     <style amp-custom>
@@ -212,7 +212,7 @@
     }
 
     a {
-        color: #1292EE;
+        color: var(--ghost-accent-color, #1292EE);
         text-decoration-skip-ink: auto;
     }
 
@@ -360,7 +360,7 @@
         top: 0;
         bottom: 0;
         width: 0.3rem;
-        background: #000;
+        background: var(--ghost-accent-color, #1292EE);
     }
 
     .post-content :not(.kg-card):not([id]) + .kg-card {
@@ -391,7 +391,7 @@
         font-weight: 400;
         font-size: 0.9em;
         line-height: 1em;
-        color: #dc0050;
+        color: #15171a;
         background: #f0f6f9;
         border-radius: 0.25em;
     }
@@ -647,6 +647,8 @@
             font-size: 1.7rem;
         }
     }
+
+    :root {--ghost-accent-color: #00c8c8;}
     </style>
 
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>

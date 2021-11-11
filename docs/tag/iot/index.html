@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-
+  <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
@@ -9,16 +8,73 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="../../assets/built/screen.css.css" />
+    <link rel="preload" href="../../assets/css/app.css12e24938a97.css" as="style" />
+    <link rel="preload" href="../../assets/js/manifest.js12e24938a97" as="script" />
+    <link rel="preload" href="../../assets/js/vendor/content-api.min.js12e24938a97" as="script" />
+    <link rel="preload" href="../../assets/js/vendor.js12e24938a97" as="script" />
+    <link rel="preload" href="../../assets/js/app.js12e24938a97" as="script" />
+    <link rel="preconnect" href="https://polyfill.io">
+    <link rel="dns-prefetch" href="https://polyfill.io">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="anonymous">
-    <link rel="preconnect" href="https://cdn.jsdelivr.net/" crossorigin="anonymous">
-    <link rel="preconnect" href="https://widget.appfleet.com/" crossorigin="anonymous">
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Red+Hat+Display:400,500,700&display=swap" />
-    <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css" />
+      <link rel="preload" href="../../assets/css/listing.css12e24938a97.css" as="style" />
+
+
+    <style>
+      /* These font-faces are here to make fonts work if the Ghost instance is installed in a subdirectory */
+
+      /* source-sans-pro-regular */
+      @font-face {
+        font-family: 'Source Sans Pro';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: local('SourceSansPro-Regular'),
+            url("../../assets/fonts/source-sans-pro/latin/source-sans-pro-regular.woff212e24938a97") format('woff2'),
+            url("../../assets/fonts/source-sans-pro/latin/source-sans-pro-regular.woff12e24938a97") format('woff');
+      }
+
+      /* source-sans-pro-600 */
+      @font-face {
+        font-family: 'Source Sans Pro';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: local('SourceSansPro-SemiBold'),
+            url("../../assets/fonts/source-sans-pro/latin/source-sans-pro-600.woff212e24938a97") format('woff2'),
+            url("../../assets/fonts/source-sans-pro/latin/source-sans-pro-600.woff12e24938a97") format('woff');
+      }
+
+      /* source-sans-pro-700 */
+      @font-face {
+        font-family: 'Source Sans Pro';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: local('SourceSansPro-Bold'),
+            url("../../assets/fonts/source-sans-pro/latin/source-sans-pro-700.woff212e24938a97") format('woff2'),
+            url("../../assets/fonts/source-sans-pro/latin/source-sans-pro-700.woff12e24938a97") format('woff');
+      }
+
+      /* iconmoon */
+      @font-face {
+        font-family: 'icomoon';
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+        src: url("../../assets/fonts/icomoon/icomoon.eot%3F101fc312e24938a97");
+        src: url("../../assets/fonts/icomoon/icomoon.eot%3F101fc3") format('embedded-opentype'),
+        url("../../assets/fonts/icomoon/icomoon.ttf%3F101fc312e24938a97") format('truetype'),
+        url("../../assets/fonts/icomoon/icomoon.woff%3F101fc312e24938a97") format('woff'),
+        url("../../assets/fonts/icomoon/icomoon.svg%3F101fc3") format('svg');
+      }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="../../assets/css/app.css12e24938a97.css" media="screen" />
+
+      <link rel="stylesheet" type="text/css" href="../../assets/css/listing.css12e24938a97.css" media="screen" />
+
+
     
-    <link rel="prefetch" href="https://appfleet.com/blog">
-    <link rel="prerender" href="https://appfleet.com/blog">
 
     <meta name="description" content="Internet of Things" />
     <link rel="icon" href="../../favicon.png" type="image/png" />
@@ -72,8 +128,72 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 3.42" />
+    <meta name="generator" content="Ghost 4.22" />
     <link rel="alternate" type="application/rss+xml" title="CSham&#x27;s Blog" href="../../rss/index.html" />
+    <script defer src="https://unpkg.com/@tryghost/portal@~1.12.0/umd/portal.min.js" data-ghost="http://localhost:2368/" crossorigin="anonymous"></script><style id="gh-members-styles">.gh-post-upgrade-cta-content,
+.gh-post-upgrade-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.gh-post-upgrade-cta-content {
+    border-radius: 8px;
+    padding: 40px 4vw;
+}
+
+.gh-post-upgrade-cta h2 {
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: -0.2px;
+    margin: 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta p {
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta small {
+    font-size: 16px;
+    letter-spacing: -0.2px;
+}
+
+.gh-post-upgrade-cta a {
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a:hover {
+    color: #ffffff;
+    opacity: 0.8;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a.gh-btn {
+    display: block;
+    background: #ffffff;
+    text-decoration: none;
+    margin: 28px 0 0;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.gh-post-upgrade-cta a.gh-btn:hover {
+    opacity: 0.92;
+}</style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism.min.css" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171097085-1 "></script>
 <script>
@@ -83,262 +203,389 @@
   gtag('config', 'UA-171097085-1');
 </script>
 
-</head>
-<body class="tag-template tag-iot">
-    <svg width="0" height="0" class="hidden">
-        <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="linkedin">
-            <title>LinkedIn icon</title>
-            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
-        </symbol>
-        <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="tumblr">
-            <title>Tumblr icon</title>
-            <path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"></path>
-        </symbol>
-        <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="github">
-            <title>GitHub icon</title>
-            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
-        </symbol>
-        <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="facebook">
-            <title>Facebook icon</title>
-            <path d="M23.998 12c0-6.628-5.372-12-11.999-12C5.372 0 0 5.372 0 12c0 5.988 4.388 10.952 10.124 11.852v-8.384H7.078v-3.469h3.046V9.356c0-3.008 1.792-4.669 4.532-4.669 1.313 0 2.686.234 2.686.234v2.953H15.83c-1.49 0-1.955.925-1.955 1.874V12h3.328l-.532 3.469h-2.796v8.384c5.736-.9 10.124-5.864 10.124-11.853z"></path>
-        </symbol>
-        <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="twitter">
-            <title>Twitter icon</title>
-            <path d="M23.954 4.569a10 10 0 0 1-2.825.775 4.958 4.958 0 0 0 2.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 0 0-8.384 4.482C7.691 8.094 4.066 6.13 1.64 3.161a4.822 4.822 0 0 0-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 0 1-2.228-.616v.061a4.923 4.923 0 0 0 3.946 4.827 4.996 4.996 0 0 1-2.212.085 4.937 4.937 0 0 0 4.604 3.417 9.868 9.868 0 0 1-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 0 0 7.557 2.209c9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63a9.936 9.936 0 0 0 2.46-2.548l-.047-.02z"></path>
-        </symbol>
+<style>:root {--ghost-accent-color: #00c8c8;}</style>
 
-    </svg>
+    <script>
+      // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+      const ghostHost = "http://localhost:2368"
+      // @license-end
+    </script>
+  </head>
+  <body class="tag-template tag-iot">
+    
 
-    <div class="site-wrapper">
 
-        
-<header class="site-archive-header">
-    <div class="outer site-nav-main">
-    <div class="inner">
-        <nav class="site-nav">
-    <div class="site-nav-left-wrapper">
-        <div class="site-nav-left">
-                <a class="site-nav-logo" href="../../index.html">CSham&#x27;s Blog</a>
-            <div class="site-nav-content">
-                        <!-- primary navigation -->
-    <ul class="nav">
-            <li class="nav-home">
-                <a href="../../index.html">Home</a>
-            </li>
-            <li class="nav-arduino">
-                <a href="../arduino/index.html">Arduino</a>
-            </li>
-            <li class="nav-iot nav-current">
-                <a href="index.html">IoT</a>
-            </li>
-            <li class="nav-author">
-                <a href="../../author/chamath/index.html">Author</a>
-            </li>
-    </ul>
 
+  
+<header class="m-header with-picture js-header">
+  <div class="m-mobile-topbar" data-aos="fade-down">
+    <button class="m-icon-button in-mobile-topbar js-open-menu" aria-label="Open menu">
+      <span class="icon-menu" aria-hidden="true"></span>
+    </button>
+      <a href="../../index.html" class="m-site-name in-mobile-topbar">
+        CSham&#x27;s Blog
+      </a>
+    <button class="m-icon-button in-mobile-topbar js-open-search" aria-label="Open search">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <div class="m-menu js-menu">
+    <button class="m-icon-button outlined as-close-menu js-close-menu" aria-label="Close menu">
+      <span class="icon-close"></span>
+    </button>
+    <div class="m-menu__main" data-aos="fade-down">
+      <div class="l-wrapper">
+        <div class="m-nav js-main-nav">
+          <nav class="m-nav__left js-main-nav-left" role="navigation" aria-label="Main menu">
+            <ul>
+                <li class="only-desktop">
+                  <a href="../../index.html" class="m-site-name in-desktop-menu">
+                    CSham&#x27;s Blog
+                  </a>
+                </li>
+                
+    <li class="nav-home">
+      <a href="../../index.html">Home</a>
+    </li>
+    <li class="nav-arduino">
+      <a href="../arduino/index.html">Arduino</a>
+    </li>
+    <li class="nav-iot nav-current">
+      <a href="index.html">IoT</a>
+    </li>
+    <li class="nav-author">
+      <a href="../../author/chamath/index.html">Author</a>
+    </li>
+
+                <li class="more">
+                  <span>
+                    <a href="javascript:void(0);" class="js-open-secondary-menu">
+                      More
+                      <span class="fas fa-chevron-down" aria-hidden="true"></span>
+                    </a>
+                  </span>
+                </li>
+              <li class="submenu-option js-submenu-option">
+                <button class="m-icon-button in-menu-main more js-toggle-submenu" aria-label="Open submenu">
+                  <span class="icon-more" aria-hidden="true"></span>
+                </button>
+                <div class="m-submenu js-submenu">
+                  <div class="l-wrapper in-submenu">
+                    <section class="m-recent-articles">
+                      <h3 class="m-submenu-title in-recent-articles">Recent articles</h3>
+                          <div class="glide js-recent-slider">
+                            <div class="glide__track" data-glide-el="track">
+                              <div class="glide__slides">
+                                <div class="glide__slide">
+                                  <a href="../../stm32/index.html" class="m-recent-article">
+                                    <div class="m-recent-article__picture ">
+                                        <img src="https://images.unsplash.com/photo-1553341640-6b28ff92098a?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MXwxMTc3M3wwfDF8c2VhcmNofDJ8fDMyJTIwYml0fGVufDB8fHw&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000" loading="lazy" alt="">
+                                    </div>
+                                    <h3 class="m-recent-article__title js-recent-article-title" title="STM32">
+                                      STM32
+                                    </h3>
+                                    <span class="m-recent-article__date">a year ago</span>
+                                  </a>
+                                </div>
+                                <div class="glide__slide">
+                                  <a href="../../nodemcu/index.html" class="m-recent-article">
+                                    <div class="m-recent-article__picture ">
+                                        <img src="https://images.unsplash.com/photo-1524234107056-1c1f48f64ab8?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MXwxMTc3M3wwfDF8c2VhcmNofDF8fEVTUDgyNjZ8ZW58MHx8fA&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000" loading="lazy" alt="">
+                                    </div>
+                                    <h3 class="m-recent-article__title js-recent-article-title" title="NodeMCU">
+                                      NodeMCU
+                                    </h3>
+                                    <span class="m-recent-article__date">a year ago</span>
+                                  </a>
+                                </div>
+                                <div class="glide__slide">
+                                  <a href="../../vscode-for-arduino/index.html" class="m-recent-article">
+                                    <div class="m-recent-article__picture ">
+                                        <img src="https://images.unsplash.com/photo-1590130382404-36dcbb666a3d?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MXwxMTc3M3wwfDF8c2VhcmNofDl8fHZzY29kZXxlbnwwfHx8&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000" loading="lazy" alt="">
+                                    </div>
+                                    <h3 class="m-recent-article__title js-recent-article-title" title="VScode for Arduino">
+                                      VScode for Arduino
+                                    </h3>
+                                    <span class="m-recent-article__date">a year ago</span>
+                                  </a>
+                                </div>
+                                <div class="glide__slide">
+                                  <a href="../../structures/index.html" class="m-recent-article">
+                                    <div class="m-recent-article__picture ">
+                                        <img src="https://images.unsplash.com/photo-1532622785990-d2c36a76f5a6?ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;fm&#x3D;jpg&amp;crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;w&#x3D;2000&amp;fit&#x3D;max&amp;ixid&#x3D;eyJhcHBfaWQiOjExNzczfQ" loading="lazy" alt="">
+                                    </div>
+                                    <h3 class="m-recent-article__title js-recent-article-title" title="Structures-I">
+                                      Structures-I
+                                    </h3>
+                                    <span class="m-recent-article__date">a year ago</span>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </section>
+                    <section class="m-tags">
+                      <h3 class="m-submenu-title">Tags</h3>
+                        <ul>
+                            <li>
+                              <a href="../arduino/index.html">Arduino</a>
+                            </li>
+                            <li>
+                              <a href="../functions/index.html">Functions</a>
+                            </li>
+                            <li>
+                              <a href="index.html">IoT</a>
+                            </li>
+                            <li>
+                              <a href="../theme/index.html">Theme</a>
+                            </li>
+                            <li>
+                              <a href="../esp8266/index.html">esp8266</a>
+                            </li>
+                            <li>
+                              <a href="../nodemcu/index.html">nodemcu</a>
+                            </li>
+                            <li>
+                              <a href="../platformio/index.html">platformio</a>
+                            </li>
+                            <li>
+                              <a href="../stm32/index.html">stm32</a>
+                            </li>
+                            <li>
+                              <a href="../structures/index.html">structures</a>
+                            </li>
+                            <li>
+                              <a href="../variables/index.html">variables</a>
+                            </li>
+                        </ul>
+                    </section>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          <div class="m-nav__right">
+            <button class="m-icon-button in-menu-main js-open-search" aria-label="Open search">
+              <span class="icon-search" aria-hidden="true"></span>
+            </button>
+            <div class="m-toggle-darkmode js-tooltip" data-tippy-content="Toggle dark mode" tabindex="0">
+              <label for="toggle-darkmode" class="sr-only">
+                Toggle dark mode
+              </label>
+              <input id="toggle-darkmode" type="checkbox" class="js-toggle-darkmode">
+              <div>
+                <span class="icon-moon moon" aria-hidden="true"></span>
+                <span class="icon-sunny sun" aria-hidden="true"></span>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="site-nav-right">
-                <!-- secondary navigation -->
-    <ul class="nav">
-            <li class="nav-linkedin">
-                <a href="https://www.linkedin.com/in/chamath-shamal/" class="social-link">
-                    <svg width="16" height="16" role="img" aria-label="linkedin icon">
-                        <use xlink:href="#linkedin"></use>
-                    </svg>
-                </a>
-            </li>
-            <li class="nav-github">
-                <a href="https://github.com/CSham31" class="social-link">
-                    <svg width="16" height="16" role="img" aria-label="github icon">
-                        <use xlink:href="#github"></use>
-                    </svg>
-                </a>
-            </li>
-            <li class="nav-tumblr">
-                <a href="https://www.tumblr.com/blog/csham31" class="social-link">
-                    <svg width="16" height="16" role="img" aria-label="tumblr icon">
-                        <use xlink:href="#tumblr"></use>
-                    </svg>
-                </a>
-            </li>
-            <li class="nav-facebook">
-                <a href="https://www.facebook.com/chamath.shamal" class="social-link">
-                    <svg width="16" height="16" role="img" aria-label="facebook icon">
-                        <use xlink:href="#facebook"></use>
-                    </svg>
-                </a>
-            </li>
-            <li class="nav-twitter">
-                <a href="https://twitter.com/chamath_shamal" class="social-link">
-                    <svg width="16" height="16" role="img" aria-label="twitter icon">
-                        <use xlink:href="#twitter"></use>
-                    </svg>
-                </a>
-            </li>
-    </ul>
+  </div>
 
+    <div id="secondary-navigation-template" style="display: none;">
+      
+  <ul class="m-secondary-menu">
+      <li class="nav-linkedin">
+        <a href="https://www.linkedin.com/in/chamath-shamal/">linkedin</a>
+      </li>
+      <li class="nav-github">
+        <a href="https://github.com/CSham31">github</a>
+      </li>
+      <li class="nav-tumblr">
+        <a href="https://www.tumblr.com/blog/csham31">tumblr</a>
+      </li>
+      <li class="nav-facebook">
+        <a href="https://www.facebook.com/chamath.shamal">facebook</a>
+      </li>
+      <li class="nav-twitter">
+        <a href="https://twitter.com/chamath_shamal">twitter</a>
+      </li>
+  </ul>
 
-    </div>
-</nav>
-    </div>
-</div>    
-
-<style type="text/css">
-    .responsive-header-img {
-        background-image: url(https://images.unsplash.com/photo-1545259742-b4fd8fea67e4?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MXwxMTc3M3wwfDF8c2VhcmNofDE1fHxJb1R8ZW58MHx8fA&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000);
-    }
-
-    @media(max-width: 1000px) {
-        .responsive-header-img {
-            background-image: url(https://images.unsplash.com/photo-1545259742-b4fd8fea67e4?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MXwxMTc3M3wwfDF8c2VhcmNofDE1fHxJb1R8ZW58MHx8fA&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000);
-            background-image: -webkit-image-set(url(https://images.unsplash.com/photo-1545259742-b4fd8fea67e4?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MXwxMTc3M3wwfDF8c2VhcmNofDE1fHxJb1R8ZW58MHx8fA&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000) 1x,
-                url(https://images.unsplash.com/photo-1545259742-b4fd8fea67e4?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MXwxMTc3M3wwfDF8c2VhcmNofDE1fHxJb1R8ZW58MHx8fA&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000) 2x);
-            background-image: image-set(url(https://images.unsplash.com/photo-1545259742-b4fd8fea67e4?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MXwxMTc3M3wwfDF8c2VhcmNofDE1fHxJb1R8ZW58MHx8fA&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000) 1x,
-                url(https://images.unsplash.com/photo-1545259742-b4fd8fea67e4?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MXwxMTc3M3wwfDF8c2VhcmNofDE1fHxJb1R8ZW58MHx8fA&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000) 2x);
-        }
-    }
-
-    @media(max-width: 600px) {
-        .responsive-header-img {
-            background-image: url(https://images.unsplash.com/photo-1545259742-b4fd8fea67e4?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MXwxMTc3M3wwfDF8c2VhcmNofDE1fHxJb1R8ZW58MHx8fA&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000);
-            background-image: -webkit-image-set(url(https://images.unsplash.com/photo-1545259742-b4fd8fea67e4?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MXwxMTc3M3wwfDF8c2VhcmNofDE1fHxJb1R8ZW58MHx8fA&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000) 1x,
-                url(https://images.unsplash.com/photo-1545259742-b4fd8fea67e4?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MXwxMTc3M3wwfDF8c2VhcmNofDE1fHxJb1R8ZW58MHx8fA&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000) 2x);
-            background-image: image-set(url(https://images.unsplash.com/photo-1545259742-b4fd8fea67e4?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MXwxMTc3M3wwfDF8c2VhcmNofDE1fHxJb1R8ZW58MHx8fA&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000) 1x,
-                url(https://images.unsplash.com/photo-1545259742-b4fd8fea67e4?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MXwxMTc3M3wwfDF8c2VhcmNofDE1fHxJb1R8ZW58MHx8fA&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000) 2x);
-        }
-    }
-</style>
-<div class="outer site-header-background responsive-header-img">
-
- 
-        <div class="inner site-header-content">
-            <h1 class="site-title">IoT</h1>
-            <h2 class="site-description">
-                Internet of Things
-            </h2>
-        </div>
     </div>
 </header>
 
-<main id="site-main" class="site-main outer">
-    <div class="inner posts">
-        <div class="post-feed">
-                <article class="post-card post tag-esp8266 tag-nodemcu tag-iot featured ">
-
-    <a class="post-card-image-link" href="../../nodemcu/index.html">
-        <img class="post-card-image"
-            srcset="https://images.unsplash.com/photo-1524234107056-1c1f48f64ab8?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MXwxMTc3M3wwfDF8c2VhcmNofDF8fEVTUDgyNjZ8ZW58MHx8fA&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 300w,
-                    https://images.unsplash.com/photo-1524234107056-1c1f48f64ab8?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MXwxMTc3M3wwfDF8c2VhcmNofDF8fEVTUDgyNjZ8ZW58MHx8fA&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 600w,
-                    https://images.unsplash.com/photo-1524234107056-1c1f48f64ab8?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MXwxMTc3M3wwfDF8c2VhcmNofDF8fEVTUDgyNjZ8ZW58MHx8fA&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 1000w,
-                    https://images.unsplash.com/photo-1524234107056-1c1f48f64ab8?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MXwxMTc3M3wwfDF8c2VhcmNofDF8fEVTUDgyNjZ8ZW58MHx8fA&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 2000w"
-            sizes="(max-width: 1000px) 400px, 700px"
-            loading="lazy"
-            src="https://images.unsplash.com/photo-1524234107056-1c1f48f64ab8?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MXwxMTc3M3wwfDF8c2VhcmNofDF8fEVTUDgyNjZ8ZW58MHx8fA&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000"
-            alt="NodeMCU"
-        />
-    </a>
-
-    <div class="post-card-content">
-
-        <a class="post-card-content-link" href="../../nodemcu/index.html">
-
-            <header class="post-card-header">
-                    <div class="post-card-primary-tag">esp8266</div>
-                <h2 class="post-card-title">NodeMCU</h2>
-            </header>
-
-            <section class="post-card-excerpt">
-                    <p>“If you think that the internet has changed your life, think again. The IoT is about to change it all over again!” — Brendan O’Brien, Chief Architect &amp; Co-Founder, Aria</p>
-            </section>
-
+<main class="main-wrap">
+    
+  <section class="m-hero with-picture" data-aos="fade">
+    <div class="m-hero__picture ">
+      <img
+        srcset="
+          https://images.unsplash.com/photo-1545259742-b4fd8fea67e4?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MXwxMTc3M3wwfDF8c2VhcmNofDE1fHxJb1R8ZW58MHx8fA&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 300w,
+          https://images.unsplash.com/photo-1545259742-b4fd8fea67e4?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MXwxMTc3M3wwfDF8c2VhcmNofDE1fHxJb1R8ZW58MHx8fA&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 600w,
+          https://images.unsplash.com/photo-1545259742-b4fd8fea67e4?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MXwxMTc3M3wwfDF8c2VhcmNofDE1fHxJb1R8ZW58MHx8fA&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 1000w,
+          https://images.unsplash.com/photo-1545259742-b4fd8fea67e4?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MXwxMTc3M3wwfDF8c2VhcmNofDE1fHxJb1R8ZW58MHx8fA&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 2000w
+        "
+        sizes="(max-width: 600px) 600px, (max-width: 1000px) 1000px, 2000px"
+        src="https://images.unsplash.com/photo-1545259742-b4fd8fea67e4?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MXwxMTc3M3wwfDF8c2VhcmNofDE1fHxJb1R8ZW58MHx8fA&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000"
+        alt=""
+      />
+    </div>
+    <div class="m-hero__content" data-aos="fade-down">
+      <h1 class="m-hero-title bigger">IoT</h1>
+        <p class="m-hero-description">
+          Internet of Things
+        </p>
+      <div class="m-hero__meta">
+        <ul class="m-hero-stats">
+          <li>
+            1 post with this tag
+          </li>
+        </ul>
+      </div>
+    </div>
+    </section>
+  
+  <div class="l-content">
+    <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
+      <div class="l-grid centered">
+        
+  <article class="m-article-card  post tag-esp8266 tag-nodemcu tag-iot featured">
+    <div class="m-article-card__picture">
+      <a href="../../nodemcu/index.html" class="m-article-card__picture-link" aria-hidden="true" tabindex="-1"></a>
+        <img class="m-article-card__picture-background" src="https://images.unsplash.com/photo-1524234107056-1c1f48f64ab8?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MXwxMTc3M3wwfDF8c2VhcmNofDF8fEVTUDgyNjZ8ZW58MHx8fA&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000" loading="lazy" alt="">
+      <a href="../../author/chamath/index.html" class="m-article-card__author js-tooltip" aria-label="Chamath Shamal" data-tippy-content="Posted by Chamath Shamal ">
+          <div style="background-image: url(../../content/images/size/w100/2021/10/79373047_1873608092786010_2407857463270309888_n.jpg);"></div>
+      </a>
+        <a href="../../nodemcu/index.html" class="m-article-card__featured js-tooltip" data-tippy-content="Featured" aria-label="Featured">
+          <span class="icon-star" aria-hidden="true"></span>
         </a>
-
-        <footer class="post-card-meta">
-            <ul class="author-list">
-                <li class="author-list-item">
-            
-                    <div class="author-name-tooltip">
-                        Chamath Shamal
-                    </div>
-            
-                    <a href="../../author/chamath/index.html" class="static-avatar">
-                        <img class="author-profile-image" src="../../content/images/size/w100/2021/10/79373047_1873608092786010_2407857463270309888_n.jpg" alt="Chamath Shamal" />
-                    </a>
-                </li>
-            </ul>
-            <div class="post-card-byline-content">
-                <span><a href="../../author/chamath/index.html">Chamath Shamal</a></span>
-                <span class="post-card-byline-date"><time datetime="2020-12-16">16 Dec 2020</time> <span class="bull">&bull;</span> 2 min read</span>
-            </div>
-        </footer>
-
     </div>
-
-</article>
+      <div class="m-article-card__info">
+        <a href="../esp8266/index.html" class="m-article-card__tag">esp8266</a>
+      <a href="../../nodemcu/index.html" class="m-article-card__info-link" aria-label="NodeMCU">
+        <div>
+          <h2 class="m-article-card__title js-article-card-title " title="NodeMCU">
+            NodeMCU
+          </h2>
         </div>
+        <div class="m-article-card__timestamp">
+          <span>a year ago</span>
+          <span>&bull;</span>
+          <span>2 min read</span>
+        </div>
+      </a>
     </div>
+  </article>
+      </div>
+    </div>
+    
+<div class="l-wrapper">
+  <nav class="m-pagination" aria-label="Pagination">
+    <span class="m-pagination__text">Page 1 of 1</span>
+  </nav>
+</div>
+
+  </div>
 </main>
 
 
-        <footer class="site-footer outer">
-            <div class="site-footer-content inner">
-                <section class="copyright"><a href="../../index.html">CSham&#x27;s Blog</a> &copy; 2021</section>
-                <nav class="site-footer-nav">
-                    <a href="../../index.html">Latest Posts</a>
-                    <a href="https://www.facebook.com/chamath.shamal/" target="_blank" rel="noopener">Facebook</a>
-                    <a href="https://twitter.com/chamath_shamal" target="_blank" rel="noopener">Twitter</a>
-                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
-                </nav>
-            </div>
-        </footer>
+    
+<div class="m-search js-search" role="dialog" aria-modal="true" aria-label="Search">
+  <button class="m-icon-button outlined as-close-search js-close-search" aria-label="Close search">
+    <span class="icon-close" aria-hidden="true"></span>
+  </button>
+  <div class="m-search__content">
+    <form class="m-search__form">
+      <div class="pos-relative">
+        <span class="icon-search m-search-icon" aria-hidden="true"></span>
+        <label for="search-input" class="sr-only">
+          Type to search
+        </label>
+        <input id="search-input" type="text" class="m-input in-search js-input-search" placeholder="Type to search">
+      </div>
+    </form>
+    <div class="js-search-results hide"></div>
+    <p class="m-not-found align-center hide js-no-results">
+      No results for your search, please try with something else.
+    </p>
+  </div>
+</div>
 
-    </div>
+    
+<footer class="m-footer">
+  <div class="m-footer__content">
+      <nav class="m-footer__nav-secondary" role="navigation" aria-label="Secondary menu in footer">
+        
+  <ul class="m-secondary-menu">
+      <li class="nav-linkedin">
+        <a href="https://www.linkedin.com/in/chamath-shamal/">linkedin</a>
+      </li>
+      <li class="nav-github">
+        <a href="https://github.com/CSham31">github</a>
+      </li>
+      <li class="nav-tumblr">
+        <a href="https://www.tumblr.com/blog/csham31">tumblr</a>
+      </li>
+      <li class="nav-facebook">
+        <a href="https://www.facebook.com/chamath.shamal">facebook</a>
+      </li>
+      <li class="nav-twitter">
+        <a href="https://twitter.com/chamath_shamal">twitter</a>
+      </li>
+  </ul>
 
+      </nav>
+    <nav class="m-footer-social">
+        <a href="https://www.facebook.com/chamath.shamal/" target="_blank" rel="noopener" aria-label="Facebook">
+          <span class="icon-facebook" aria-hidden="true"></span>
+        </a>
+        <a href="https://twitter.com/chamath_shamal" target="_blank" rel="noopener" aria-label="Twitter">
+          <span class="icon-twitter" aria-hidden="true"></span>
+        </a>
+      <a href="http://localhost:2368/rss" aria-label="RSS">
+        <span class="icon-rss" aria-hidden="true"></span>
+      </a>
+    </nav>
+    <p class="m-footer-copyright">
+      <span>CSham&#x27;s Blog &copy; 2021</span>
+      <span>&nbsp; &bull; &nbsp;</span>
+      <span>Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a></span>
+    </p>
+    <p class="m-footer-copyright jslicense">
+      <a href="../../assets/html/javascript.html12e24938a97.html" rel="jslicense">JavaScript license information</a>
+    </p>
+  </div>
+</footer>
 
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous">
-    </script>
-    <script src="../../assets/built/casper1.js"></script>
+    <div class="m-alert success subscribe js-alert" data-notification="subscribe">
+  Great! You&#x27;ve successfully subscribed.
+  <button class="m-alert__close js-notification-close" aria-label="Close">
+    <span class="icon-close"></span>
+  </button>
+</div>
 
-    <script>
-        // Parse the URL parameter
-        function getParameterByName(name, url) {
-            if (!url) url = window.location.href;
-            name = name.replace(/[\[\]]/g, "\\$&");
-            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, " "));
-        }
+<div class="m-alert success signup js-alert" data-notification="signup">
+  Great! Next, complete checkout for full access.
+  <button class="m-alert__close js-notification-close" aria-label="Close">
+    <span class="icon-close"></span>
+  </button>
+</div>
 
-        // Give the parameter a variable name
-        var action = getParameterByName('action');
+<div class="m-alert success signin js-alert" data-notification="signin">
+  Welcome back! You&#x27;ve successfully signed in.
+  <button class="m-alert__close js-notification-close" aria-label="Close">
+    <span class="icon-close"></span>
+  </button>
+</div>
 
-        $(document).ready(function () {
-            if (action == 'subscribe') {
-                $('body').addClass("subscribe-success");
-            }
-
-            $('.subscribe-success-message .subscribe-close').click(function () {
-                $('.subscribe-success-message').addClass('close');
-            });
-
-            // Reset form on opening subscrion overlay
-            $('.subscribe-button').click(function() {
-                $('.subscribe-overlay form').removeClass();
-                $('.subscribe-email').val('');
-            });
-        });
-    </script>
+<div class="m-alert success checkout js-alert" data-notification="checkout">
+  Success! Your account is fully activated, you now have access to all content.
+  <button class="m-alert__close js-notification-close" aria-label="Close">
+    <span class="icon-close"></span>
+  </button>
+</div>
+    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver%2CPromise%2CArray.prototype.includes%2CString.prototype.endsWith%2CString.prototype.startsWith%2CObject.assign%2CNodeList.prototype.forEach"></script>
+    <script defer src="../../assets/js/manifest.js12e24938a97"></script>
+    <script defer src="../../assets/js/vendor/content-api.min.js12e24938a97"></script>
+    <script defer src="../../assets/js/vendor.js12e24938a97"></script>
+    <script defer src="../../assets/js/app.js12e24938a97"></script>
 
     
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/prism.min.js"></script>
-
-</body>
+  </body>
 </html>
